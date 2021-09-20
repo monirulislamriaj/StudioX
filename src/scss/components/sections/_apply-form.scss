@@ -1,0 +1,142 @@
+/*************** 
+ start apply-form  section
+****************/
+
+.apply-form {
+  padding: $spacer * 3.5 0 $spacer * 15.6;
+  background: $apply-bg;
+  @include media-breakpoint-down(lg) {
+    padding: $spacer * 3.5 0 $spacer * 6;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: $spacer * 0 0 $spacer * 3;
+  }
+  .section-header {
+    padding-bottom: $spacer * 4.5;
+    @include media-breakpoint-down(sm) {
+      padding-bottom: $spacer * 2.5;
+    }
+  }
+  form {
+    background: $apply-form-bg;
+    border-radius: 50px;
+    padding: $spacer * 5 $spacer * 3;
+    @include media-breakpoint-down(md) {
+      padding: $spacer * 5 $spacer * 1;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: $spacer * 5 $spacer * 0;
+      width: 90%;
+      margin: 0 auto;
+    }
+    textarea {
+      padding-top: $padding * 1.3;
+      min-height: 240px;
+      resize: none;
+      background: $apply-bg;
+      border: 1px solid $apply-border;
+      &:focus {
+        border-color: $apply-border-color;
+        background: $apply-bg;
+      }
+    }
+    ::placeholder {
+      color: $apply-paragraph-color;
+    }
+    h3 {
+      color: $apply-heading-color;
+      font-size: $font-size-base * 1.9;
+      width: 40%;
+      font-family: $font-primary;
+      margin-bottom: $margin * 2.5;
+      @include media-breakpoint-down(lg) {
+        width: 100%;
+        text-align: center;
+      }
+      @include media-breakpoint-down(md) {
+        font-size: $font-size-base * 1.5;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: $font-size-base * 1.25;
+      }
+    }
+    .Information {
+      position: relative;
+      padding-bottom: $padding * 3.7;
+      margin-bottom: $margin * 3.7;
+      @include media-breakpoint-down(sm) {
+        padding-bottom: $padding * 2.5;
+        margin-bottom: $margin * 2.5;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        background-color: $apply-before-color;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+      }
+
+      &-input {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(464px, 1fr));
+        grid-row-gap: 40px;
+        grid-column-gap: 24px;
+        @include media-breakpoint-down(xxl) {
+          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+        @include media-breakpoint-down(xl) {
+          grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+        }
+        @include media-breakpoint-down(lg) {
+          grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+        }
+
+        .input-box {
+          position: relative;
+          .input-box-input {
+            top: 0;
+            left: 0;
+            border: 1px solid $apply-border;
+            border-radius: $spacer * 1.25;
+            color: $apply-text-color;
+            outline: none;
+            padding: 22px 30px;
+            background: $apply-input-color;
+            /* Change border when input focus*/
+            &:focus {
+              border-color: $apply-border-color;
+            }
+          }
+          .input-box-label {
+            position: absolute;
+            left: $spacer * 1;
+            top: $spacer * 1.5;
+            padding: 0px 10px 0px 10px;
+            color: $apply-paragraph-color;
+            cursor: text;
+            transition: top 200ms ease-in, left 200ms ease-in;
+            background-color: $apply-input-color;
+            letter-spacing: -0.3px;
+            font-weight: $font-weight-medium;
+            font-size: $font-size-base * 1.25;
+          }
+        }
+        .input-box-input:focus ~ .input-box-label,
+        .input-box-input:not(:placeholder-shown).input-box-input:not(:focus)
+          ~ .input-box-label {
+          top: -$spacer * 0.5;
+          font-size: $spacer * 0.8;
+          left: $spacer * 0.8;
+          background-color: $apply-form-bg;
+          border-radius: 20px;
+        }
+      }
+    }
+    // .btn-check[type="file"] + label {
+    //   background-color: $Gainsboro;
+    //   color: $white !important;
+    // }
+  }
+}

@@ -1,0 +1,412 @@
+// Navbar
+//
+// Override Bootstrap Navbar
+/********** 
+  5. Navbar Styles 
+**********/
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; // allow us to do the line break for collapsing content
+  align-items: center;
+  justify-content: space-between; // space out brand from logo
+  padding-top: $navbar-padding-y;
+  padding-right: $navbar-padding-x; // default: null
+  padding-bottom: $navbar-padding-y;
+  padding-left: $navbar-padding-x; // default: null
+  background: none;
+  z-index: 1009;
+  @include gradient-bg();
+
+  // Navbar button position fixing
+}
+@include media-breakpoint-down(lg) {
+  .navbar {
+    margin: $spacer;
+    padding: 1.5rem 0;
+    border-radius: 0.5rem;
+    width: calc(100% - 32px) !important;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .navbar {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+// Navbar brand
+//
+// Used for brand, project, or site names.
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: $navbar-brand-padding-y;
+  margin-right: $navbar-brand-margin-end;
+  @include font-size($navbar-brand-font-size);
+  text-decoration: if($link-decoration == none, null, none);
+  white-space: nowrap;
+  &:hover,
+  &:focus {
+    text-decoration: if($link-hover-decoration == underline, none, null);
+  }
+
+  svg {
+    path {
+      fill: $navbar-logo-color;
+      &:nth-child(3) {
+        fill: $navbar-fill-color;
+      }
+    }
+  }
+}
+
+//end navbar-brand-two
+//Respnsive MObile View
+@include media-breakpoint-down(sm) {
+  .navbar-brand {
+    flex: 1;
+  }
+}
+// Navbar nav
+//
+// Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+
+  .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    font-size: $font-size-base * 1.1;
+    font-weight: $font-weight-medium;
+    color: $navbar-link-color;
+    &.active {
+      color: $navbar-active-color;
+    }
+    &:hover {
+      color: $navbar-active-color;
+    }
+  }
+  .dropdown {
+    .dropdown-menu {
+      box-sizing: content-box;
+      background: $navbar-dropdwon-bg;
+      min-width: 188px;
+      transition: all 0.3s ease-in-out;
+      border: 1px solid $navbar-dborder-color;
+      border-radius: 10px;
+      padding: $padding * 1.9 $padding * 1.9 $padding * 2.5;
+      left: -70%;
+    }
+    &-toggle {
+      &:after {
+        content: "\f107";
+        font-family: FontAwesome;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        border-top: none;
+        padding: $spacer * 0;
+        margin-right: 0 !important;
+      }
+    }
+    li.dropdown-megamenu-column-items {
+      margin-bottom: $margin;
+      border-bottom: 1px solid $navbar-item-border-color;
+      padding-bottom: $padding * 1.25;
+      &:last-child {
+        margin-bottom: 0;
+        border: none;
+        padding: 0;
+      }
+    }
+    &-item {
+      margin-bottom: 0;
+      color: $navbar-ditem-color;
+      font-weight: bold;
+      text-align: left;
+      padding: 0;
+      font-weight: $font-weight-medium;
+      font-size: $font-size-base * 1.1;
+      &:hover,
+      &:focus {
+        color: $navbar-active-color !important;
+        background-color: none;
+      }
+    }
+    .nav-arrow {
+      position: absolute;
+      top: -10px;
+      right: 15px;
+    }
+  }
+  /* Dropdown Menu for large screen */
+  @include media-breakpoint-up(lg) {
+    .dropdown {
+      .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(0);
+        top: 100%;
+        transform-origin: 0 0 0;
+      }
+      &:hover {
+        .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: scaleY(1);
+          transform-origin: 0 0 0;
+        }
+      }
+    }
+  }
+  /* Dropdown Menu for Small screen */
+  @include media-breakpoint-down(lg) {
+    margin-top: $spacer * 1.5 !important;
+    .nav-link {
+      margin-bottom: 0.3rem;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      color: $white;
+      font-weight: $font-weight-medium;
+    }
+
+    .dropdown {
+      width: calc(100% + 28px);
+      .dropdown-menu {
+        display: none;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: scaleY(0);
+        top: 100%;
+        transform-origin: 0 0 0;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+      }
+      .dropdown-menu.show {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+        transform-origin: 0 0 0;
+        height: auto;
+        text-align: center;
+        background: $navbar-dropdwon-bg;
+        width: auto;
+      }
+      &-toggle {
+        &:after {
+          font-size: 1rem;
+          position: relative;
+          transform: translateY(-5%);
+          padding: 0;
+          margin: 0;
+        }
+      }
+      &-item {
+        text-align: center;
+      }
+    }
+  }
+}
+
+//Sticky Navbar
+
+.sticky-nav {
+  z-index: 100;
+  padding: $spacer $spacer * 2 !important;
+  background: $navbar-bg;
+  backdrop-filter: blur(16px);
+  .btn-links {
+    background: $button-LI-sticky-bg;
+    color: $button-LI-sticky-color;
+  }
+}
+//Customize style for mobile
+@include media-breakpoint-down(lg) {
+  .navbar {
+    background: $secondary-light !important;
+    // background: #a2a2a2 !important;
+  }
+
+  .sticky-nav {
+    .navbar-nav .dropdown {
+      width: calc(80% + 92px);
+    }
+  }
+}
+@include media-breakpoint-down(sm) {
+  .sticky-nav {
+    padding: $spacer !important;
+    .navbar-nav .dropdown {
+      width: calc(100% + 60px);
+    }
+  }
+}
+/**
+ * Note: I have omitted any vendor-prefixes for clarity.
+ * Adding them is left as an exercise for the reader.
+ */
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+  background: $white;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+  background: $white;
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+  background: $white;
+}
+.animated {
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  -o-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+}
+@-webkit-keyframes swingInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(-90deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+  }
+}
+@-moz-keyframes swingInX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(-90deg);
+  }
+
+  100% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+  }
+}
+@-o-keyframes swingInX {
+  0% {
+    -o-transform: perspective(400px) rotateX(-90deg);
+  }
+
+  100% {
+    -o-transform: perspective(400px) rotateX(0deg);
+  }
+}
+@keyframes swingInX {
+  0% {
+    transform: perspective(400px) rotateX(-90deg);
+  }
+
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+  }
+}
+
+.animated.swingInX {
+  -webkit-transform-origin: top;
+  -moz-transform-origin: top;
+  -ie-transform-origin: top;
+  -o-transform-origin: top;
+  transform-origin: top;
+
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: swingInX;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: swingInX;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: swingInX;
+  backface-visibility: visible !important;
+  animation-name: swingInX;
+}
+
+@-webkit-keyframes swingOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+  }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(-90deg);
+  }
+}
+
+@-moz-keyframes swingOutX {
+  0% {
+    -moz-transform: perspective(400px) rotateX(0deg);
+  }
+  100% {
+    -moz-transform: perspective(400px) rotateX(-90deg);
+  }
+}
+
+@-o-keyframes swingOutX {
+  0% {
+    -o-transform: perspective(400px) rotateX(0deg);
+  }
+  100% {
+    -o-transform: perspective(400px) rotateX(-90deg);
+  }
+}
+
+@keyframes swingOutX {
+  0% {
+    transform: perspective(400px) rotateX(0deg);
+  }
+  100% {
+    transform: perspective(400px) rotateX(-90deg);
+  }
+}
+
+.animated.swingOutX {
+  -webkit-transform-origin: top;
+  -webkit-animation-name: swingOutX;
+  -webkit-backface-visibility: visible !important;
+  -moz-animation-name: swingOutX;
+  -moz-backface-visibility: visible !important;
+  -o-animation-name: swingOutX;
+  -o-backface-visibility: visible !important;
+  animation-name: swingOutX;
+  backface-visibility: visible !important;
+}
+@include media-breakpoint-down(lg) {
+  .navbar {
+    background: $white;
+  }
+}
+// Button for toggling the navbar when in its collapsed state
+.navbar-toggler {
+  background-color: $white; // remove default button style
+  border: $border-width solid #aaaab7; // remove default button style
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-default {
+  display: none;
+}
+.navbar-toggler .navbar-toggler-default {
+  display: -ms-flexbox;
+  display: flex;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-toggled {
+  display: -ms-flexbox;
+  display: flex;
+}
+.navbar-toggler .navbar-toggler-toggled {
+  display: none;
+}

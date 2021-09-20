@@ -1,0 +1,307 @@
+.project,
+.project-two,
+.project-three {
+  position: relative;
+  padding-bottom: $spacer * 6;
+  @include media-breakpoint-down(xxl) {
+    padding-bottom: $spacer * 3;
+  }
+  @include media-breakpoint-down(md) {
+    padding-bottom: $spacer * 0;
+  }
+  .section-header {
+    padding: $spacer * 7.9 0 $spacer * 4.5;
+    @include media-breakpoint-down(lg) {
+      padding: $spacer * 5 0 $spacer * 4.5;
+    }
+  }
+  &-item-header-wraper {
+    max-width: 1660px;
+    background: linear-gradient(
+      109.9deg,
+      #ffe1b7 6.21%,
+      #ffe1ba 28.86%,
+      #7cfff7 70.45%,
+      #6966ff 94.94%
+    );
+    margin: 0 auto 250px;
+    border-radius: 40px;
+    overflow: hidden;
+
+    @include media-breakpoint-down(xxl) {
+      margin: 0 auto 150px;
+    }
+    @include media-breakpoint-down(lg) {
+      margin: 0 auto 80px;
+    }
+  }
+  // project-item-header
+  &-item-header {
+    display: flex;
+    align-items: center;
+    padding: $padding * 2.9 0 0 $padding * 10.5;
+    @include media-breakpoint-down(xxl) {
+      padding: $padding * 0 0 0 $padding * 2.5;
+    }
+    @include media-breakpoint-down(lg) {
+      flex-wrap: wrap-reverse;
+      padding: 0;
+    }
+
+    &-content {
+      position: relative;
+      width: 40%;
+      // margin: $spacer * 15.5 0 $spacer * 10;
+      @include media-breakpoint-down(xxl) {
+        width: 45%;
+      }
+      @include media-breakpoint-down(lg) {
+        width: 100%;
+        padding: $padding * 2.5;
+        text-align: center;
+      }
+      @include media-breakpoint-down(sm) {
+        padding: $spacer * 2 $spacer * 1;
+      }
+      h2 {
+        color: $project-heading-color;
+        margin-bottom: $margin * 2.1;
+        font-size: $font-size-base * 4.4;
+        line-height: 77px;
+        padding-right: $padding * 4;
+        @include media-breakpoint-down(xxl) {
+          font-size: $font-size-base * 4;
+          margin-bottom: $margin * 1.5;
+        }
+        @include media-breakpoint-down(xl) {
+          padding-right: $padding * 0;
+        }
+        @include media-breakpoint-down(lg) {
+          font-size: $font-size-base * 3;
+        }
+        @include media-breakpoint-down(sm) {
+          font-size: $font-size-base * 2;
+        }
+      }
+      p {
+        font-size: $spacer * 1.25;
+        font-weight: $font-weight-medium;
+        color: $project-paragraph-color;
+        margin-bottom: $spacer * 3;
+        line-height: 35px;
+        @include media-breakpoint-down(xxl) {
+          margin-bottom: $spacer * 1.5;
+        }
+        @include media-breakpoint-down(lg) {
+          margin-bottom: $spacer * 1;
+        }
+      }
+      span {
+        font-size: 18px;
+      }
+    }
+    &-banner {
+      width: 60%;
+      align-self: flex-end;
+      margin-left: 1px;
+      @include media-breakpoint-down(xxl) {
+        width: 55%;
+      }
+      @include media-breakpoint-down(lg) {
+        width: 100%;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  // project-item-style
+  &-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacer * 9.4;
+    @include media-breakpoint-down(xxl) {
+      margin-bottom: $spacer * 5;
+    }
+    @include media-breakpoint-down(lg) {
+      margin-bottom: $spacer * 3;
+    }
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap-reverse;
+    }
+    &-content {
+      position: relative;
+      width: 50%;
+      margin-right: $spacer * 2;
+      @include media-breakpoint-down(xxl) {
+        padding: $spacer * 3.5 0 0;
+      }
+      @include media-breakpoint-down(xl) {
+        padding: $spacer * 1.5 0 0;
+      }
+      @include media-breakpoint-down(lg) {
+        padding: $spacer * 1 0 0;
+      }
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        margin-right: 0;
+        padding: $spacer * 2;
+        text-align: center;
+      }
+
+      h2 {
+        color: $project-SH-color;
+        margin-bottom: $spacer * 1.2;
+        font-size: $font-size-base * 4.4;
+        @include media-breakpoint-down(xxl) {
+          font-size: $font-size-base * 2.9;
+        }
+        @include media-breakpoint-down(lg) {
+          font-size: $font-size-base * 1.9;
+        }
+      }
+      p {
+        font-size: $spacer * 1.9;
+        font-weight: $font-weight-bold;
+        font-family: $font-secondary;
+        color: $project-SP-color;
+        margin-bottom: $spacer * 4.4;
+        line-height: 43.5px;
+        @include media-breakpoint-down(xxl) {
+          margin-bottom: $spacer * 3;
+        }
+        @include media-breakpoint-down(lg) {
+          margin-bottom: $spacer * 1;
+          font-size: $spacer * 1.25;
+        }
+        @include media-breakpoint-down(sm) {
+          line-height: 35px;
+        }
+      }
+      span {
+        font-size: 18px;
+      }
+    }
+    &-banner {
+      border-radius: 40px;
+      width: 45%;
+      align-self: flex-end;
+      overflow: hidden;
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  ////////start project-two////////////
+  &-two,
+  &-three {
+    &-item-header-wraper {
+      margin: 0 auto 80px;
+      @include media-breakpoint-down(xxl) {
+        margin: 0 auto 0px;
+      }
+    }
+    .section-header {
+      padding: 7.5rem 0 2.6rem;
+      @include media-breakpoint-down(lg) {
+        padding: 4rem 0 2.6rem;
+      }
+    }
+
+    .card {
+      padding: 0;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      align-items: stretch;
+      margin: $spacer * 6.4 $spacer * 8 $spacer * 0;
+      @include media-breakpoint-down(lg) {
+        margin: $spacer * 4 $spacer * 0 $spacer * 0;
+        text-align: center;
+      }
+      &-banner {
+        border-radius: 40px;
+      }
+      &-body {
+        padding: $spacer * 3.2 0 0;
+        h3 {
+          color: $projectTwo-heading-color;
+          font-size: $font-size-base * 1.9;
+          margin-bottom: $margin;
+          line-height: 43px;
+        }
+        p {
+          font-size: $font-size-base * 1.25;
+          margin-bottom: $margin * 1.9;
+          font-weight: $font-weight-medium;
+          color: $projectTwo-paragraph-color;
+          // letter-spacing: -1.5px;
+        }
+        .btn-secondary {
+          background: $project-button-bg;
+        }
+      }
+    }
+  }
+  ////////start project-three////////////
+  &-three {
+    padding-bottom: $spacer * 13.8;
+    @include media-breakpoint-down(xxl) {
+      padding-bottom: $spacer * 8;
+    }
+    @include media-breakpoint-down(xl) {
+      padding-bottom: $spacer * 4;
+    }
+    @include media-breakpoint-down(lg) {
+      padding-bottom: $spacer * 1;
+    }
+    .section-header {
+      padding: $spacer * 8.8 0 $spacer * 6;
+      @include media-breakpoint-down(xl) {
+        padding: $spacer * 3.8 0 $spacer * 4;
+      }
+      @include media-breakpoint-down(md) {
+        padding: $spacer * 3 0 $spacer * 3;
+      }
+    }
+    .card {
+      padding: 0;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      align-items: stretch;
+      margin: 0;
+      @include media-breakpoint-down(lg) {
+        margin-bottom: $spacer * 2;
+      }
+      &-banner {
+        margin-bottom: $spacer * 8.2;
+        border-radius: 40px;
+        @include media-breakpoint-down(xxl) {
+          margin-bottom: $spacer * 5;
+        }
+      }
+      .logo {
+        margin-bottom: $margin * 2;
+      }
+      &-body {
+        padding: 0 $spacer * 3 0 0;
+        @include media-breakpoint-down(lg) {
+          padding: $spacer * 0;
+        }
+        h3 {
+          color: $projectThree-heading-color;
+          margin-bottom: $margin * 2.5;
+        }
+        .card-text {
+          font-weight: normal;
+          line-height: 29px;
+          color: $projectThree-paragraph-color;
+        }
+      }
+    }
+  }
+}

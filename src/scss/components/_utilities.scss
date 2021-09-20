@@ -1,0 +1,137 @@
+/********** 
+  1. Custom Utilities Classes 
+**********/
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/utilities";
+$utilities: map-merge(
+  $utilities,
+  (
+    // scss-docs-start Z-indexes
+    "zindex":
+      (
+        property: z-index,
+        class: zindex,
+        values: (
+          dropdown: $zindex-dropdown,
+          sticky: $zindex-sticky,
+          fixed: $zindex-fixed,
+          offcanvas: $zindex-offcanvas,
+          modal-backdrop: $zindex-modal-backdrop,
+          modal: $zindex-modal,
+          popover: $zindex-popover,
+          tooltip: $zindex-tooltip,
+          n1: -1,
+          1: 1,
+        ),
+      ),
+    // scss-docs-end Z-indexes
+    // scss-docs-end Opacities
+    "opacity":
+      (
+        property: opacity,
+        values: (
+          0: 0,
+          25: 0.25,
+          50: 0.5,
+          75: 0.75,
+          100: 1,
+        ),
+      ),
+    // scss-docs-end Custom width
+    "width":
+      (
+        responsive: true,
+        property: width,
+        class: w,
+        values: (
+          10: 10%,
+          15: 15%,
+          20: 20%,
+          25: 25%,
+          30: 30%,
+          35: 35%,
+          40: 40%,
+          45: 45%,
+          50: 50%,
+          55: 55%,
+          60: 60%,
+          65: 65%,
+          70: 70%,
+          75: 75%,
+          80: 80%,
+          85: 85%,
+          90: 90%,
+          100: 100%,
+          auto: auto,
+        ),
+      ),
+    // scss-docs-end Custom letter-spacing
+    "letter-spacing":
+      (
+        property: letter-spacing,
+        class: ls,
+        values: (
+          null: normal,
+          sm: 2px,
+          md: 4px,
+          lg: 5px,
+          xl: -2px,
+        ),
+      ),
+    // scss-docs-end Custom letter-spacing
+    "line-height":
+      (
+        responsive: true,
+        property: line-height,
+        class: lh,
+        values: (
+          sm: 120%,
+          md: 150%,
+          lg: 170%,
+        ),
+      ),
+    // scss-docs-end Custom Fnt-wight
+    "font-weight":
+      map-merge(
+        map-get($utilities, "font-weight"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "font-weight"), "values"),
+              (
+                semi-bold: 600,
+                medium: 500,
+              )
+            ),
+        )
+      ),
+    "shadow":
+      map-merge(
+        map-get($utilities, "shadow"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "shadow"), "values"),
+              (
+                inset: $box-shadow-inset,
+              )
+            ),
+        )
+      ),
+    "rounded":
+      map-merge(
+        map-get($utilities, "rounded"),
+        (
+          //responsive:true,
+          values:
+            map-merge(
+              map-get(map-get($utilities, "rounded"), "values"),
+              (
+                4: 1.125rem,
+                lg: $border-radius-xxl,
+              )
+            )
+        )
+      )
+  )
+); // stylelint-disable indentation

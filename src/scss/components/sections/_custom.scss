@@ -1,0 +1,376 @@
+/********** 
+  14. Custom Styles 
+**********/
+
+// section-header style
+.section-header {
+  position: relative;
+  padding: $spacer * 4 0 $spacer * 3;
+  text-align: center;
+  h2 {
+    color: $custom-heading-color;
+    letter-spacing: -0.32px;
+    line-height: 65px;
+    @include media-breakpoint-down(md) {
+      font-size: $spacer * 2;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: $font-size-base * 1.9;
+      line-height: 45px;
+    }
+  }
+  h3 {
+    color: $custom-heading-color;
+    margin: $spacer * 1.25 0 0;
+    font-size: $spacer * 1.9;
+    @include media-breakpoint-down(sm) {
+      font-size: $font-size-base * 1.25;
+    }
+  }
+}
+
+// 404 page style
+.error {
+  position: relative;
+  background: $custom-bg;
+  &-content {
+    position: relative;
+    h3 {
+      font-size: $font-size-base * 4.4;
+      color: $custom-heading-color;
+      @include media-breakpoint-down(md) {
+        font-size: $font-size-base * 3;
+      }
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+// inner-hero-page
+.inner-hero-page,
+.case-study-hero,
+.inner-blog-details {
+  background: $custom-bg;
+  h2 {
+    color: $custom-heading-color;
+    font-size: $hero-inner-title;
+    line-height: 77px;
+    margin-bottom: 0;
+    @include media-breakpoint-down(lg) {
+      font-size: $spacer * 3;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: $spacer * 2.5;
+      line-height: 50px;
+    }
+  }
+  h3,
+  p {
+    color: $custom-heading-color;
+    font-family: $font-primary;
+    font-size: $font-size-base * 1.25;
+    letter-spacing: normal;
+    line-height: 20px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  &-shape-wrapper {
+    overflow: hidden;
+    bottom: 0%;
+    .shape-one {
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+.case-study-hero {
+  h2 {
+    @include media-breakpoint-down(sm) {
+      font-size: $spacer * 2.1;
+    }
+  }
+  h3 {
+    margin-bottom: $margin * 0.8;
+  }
+  h3,
+  p {
+    color: $custom-sp-color;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-base * 1.25;
+    letter-spacing: normal;
+    line-height: 20px;
+  }
+}
+// inner-blog-details
+.inner-blog-details {
+  h2 {
+    @include media-breakpoint-down(md) {
+      font-size: $spacer * 2.5;
+      line-height: 50px;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: $spacer * 2;
+    }
+  }
+  .blog-post-meta,
+  .blog-post-tag {
+    ul {
+      li {
+        position: relative;
+        padding: 0 $spacer * 1.8;
+        margin: 0;
+        @include media-breakpoint-down(sm) {
+          margin-bottom: $margin;
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          top: 50%;
+          right: -5%;
+          background: $blog-after-color;
+          width: 20px;
+          height: 1px;
+          transform: rotate(90deg);
+        }
+        &:nth-child(2) {
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .blog-post-tag {
+    ul {
+      li {
+        &:nth-child(2) {
+          &::before {
+            display: block;
+          }
+        }
+        &:nth-child(3) {
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* chat-bot	 end */
+
+/**********
+CSS Grid Template  Styles
+***********/
+div[class*="grid-template"] {
+  @include media-breakpoint-down(lg) {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  @include media-breakpoint-down(md) {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+/**********
+Section Header Styles
+***********/
+@each $color, $value in $theme-colors {
+  .section-bg-#{$color} {
+    @include section-header($value);
+  }
+}
+/**********
+Badge Override
+***********/
+.badge-default {
+  background-color: $black;
+}
+/**********
+Badge Soft  Styles
+***********/
+@each $color, $value in $theme-colors {
+  .badge-soft-#{$color} {
+    @include badge-soft($value);
+    border: none;
+  }
+}
+/* Button Close Style */
+.btn-close {
+  margin-top: $spacer / 2;
+  margin-right: $spacer;
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.separator-bottom,
+.separator-bottom-two {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    max-width: 1450px;
+    height: 1px;
+    background: $custom-border-color;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include media-breakpoint-down(xxl) {
+      max-width: 1150px;
+    }
+    @include media-breakpoint-down(xl) {
+      max-width: 950px;
+    }
+    @include media-breakpoint-down(lg) {
+      max-width: 730px;
+    }
+    @include media-breakpoint-down(md) {
+      max-width: 500px;
+    }
+    @include media-breakpoint-down(sm) {
+      max-width: 340px;
+    }
+  }
+}
+.separator-bottom-two {
+  &::after {
+    top: 67%;
+    @include media-breakpoint-down(xxl) {
+      top: 64%;
+    }
+    @include media-breakpoint-down(xl) {
+      top: 60%;
+    }
+    @include media-breakpoint-down(lg) {
+      top: 51%;
+    }
+    @include media-breakpoint-down(md) {
+      top: 50.5%;
+    }
+    @include media-breakpoint-down(sm) {
+      top: 47%;
+    }
+  }
+}
+
+// light-modecheckbox
+.light-mode-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  top: 200px;
+}
+
+.light-mode-slot {
+  position: absolute;
+  height: 50px;
+  width: 110px;
+  border-radius: 10em;
+  background-color: $white;
+  transition: background-color 250ms;
+  transform: rotate(90deg);
+}
+
+.light-mode-checkbox:checked ~ .light-mode-slot {
+  background-color: #374151;
+}
+
+.light-mode-button {
+  transform: translate(3.75em, 0.75em);
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: #ffeccf;
+  transition: all 0.3s ease-in-out;
+}
+
+.light-mode-checkbox:checked ~ .light-mode-slot .light-mode-button {
+  background-color: #485367;
+
+  transform: translate(0.75em, 0.75em);
+}
+
+.sun-icon {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  color: #ffbb52;
+}
+
+.sun-icon-wrapper {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  opacity: 1;
+  transform: translate(1em, 0.7em);
+  transform-origin: 50% 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.light-mode-checkbox:checked ~ .light-mode-slot .sun-icon-wrapper {
+  opacity: 0;
+  transform: translate(3em, 2em);
+}
+
+.moon-icon {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  color: white;
+}
+
+.moon-icon-wrapper {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  opacity: 0;
+  transform: translate(1em, 0.7em);
+  transform-origin: 50% 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.light-mode-checkbox:checked ~ .light-mode-slot .moon-icon-wrapper {
+  opacity: 1;
+  transform: translate(4em, 0.75em);
+}
+
+#toggle {
+  position: fixed;
+  top: 200px;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: #494c56;
+  border-radius: 0.5rem;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &::before {
+    content: "\f185";
+    font-family: fontAwesome;
+    font-size: 24px;
+  }
+}
+.darkmode #toggle {
+  background: $custom-toggle-color;
+  color: $white;
+  &::before {
+    content: "\f186";
+    font-family: fontAwesome;
+  }
+}
+// body.darkmode {
+//   background: #fff;
+// }

@@ -1,0 +1,302 @@
+/********** 
+ Blog  Section 
+**********/
+.blog,
+.taxonomy {
+  // blog-header-style
+  .card {
+    align-items: center;
+    box-shadow: none;
+    border-radius: 50px;
+    padding: 0rem;
+    transition: all 0.3s ease-in-out;
+    background: $blog-card-bg;
+    overflow: hidden;
+    z-index: 100;
+    margin-bottom: $margin * 5.4;
+    @include media-breakpoint-down(xl) {
+      margin-bottom: $margin * 1;
+    }
+    @include media-breakpoint-down(lg) {
+      text-align: center;
+    }
+    .blog-post-item-thumb {
+      width: 40%;
+      margin-right: $margin * 2;
+      overflow: hidden;
+      @include media-breakpoint-down(xxl) {
+        width: 50%;
+      }
+      @include media-breakpoint-down(xl) {
+        margin-right: $margin * 0;
+      }
+      @include media-breakpoint-down(lg) {
+        width: 100%;
+      }
+      img {
+        max-width: 100%;
+        border-radius: 50px 0px 0px 50px;
+        @include media-breakpoint-down(lg) {
+          border-radius: 50px;
+          width: 100%;
+        }
+      }
+    }
+    .blog-post-content {
+      width: 60%;
+      z-index: 9;
+      padding: $spacer * 2 $spacer * 8 $spacer * 2 $spacer * 2;
+      @include media-breakpoint-down(xxl) {
+        width: 50%;
+        padding: $spacer * 2 $spacer * 2 $spacer * 2 $spacer * 2;
+      }
+      @include media-breakpoint-down(lg) {
+        width: 100%;
+      }
+      .blog-post-meta {
+        ul {
+          display: flex;
+          align-items: center;
+          @include media-breakpoint-down(lg) {
+            justify-content: center;
+          }
+          li {
+            padding: 0 10px;
+          }
+          a {
+            padding: 12px 20px;
+            border: 1px solid $blog-meta-color;
+            border-radius: 12px;
+            color: $blog-text-color;
+          }
+          p {
+            color: $blog-text-color;
+            margin-bottom: 0;
+          }
+        }
+      }
+      .blog-post-body {
+        &-title {
+          margin-bottom: $margin * 1.4;
+          h2 {
+            color: $blog-heading-color;
+            letter-spacing: -2px;
+            @include media-breakpoint-down(xxl) {
+              font-size: $font-size-base * 2;
+            }
+            @include media-breakpoint-down(sm) {
+              font-size: $font-size-base * 1.5;
+            }
+          }
+        }
+        p {
+          color: $blog-paragraph-color;
+          font-size: $font-size-base * 1.25;
+          font-weight: $font-weight-medium;
+          width: 80%;
+          margin-bottom: $margin * 3.8;
+          line-height: 29px;
+          letter-spacing: -1.5px;
+          @include media-breakpoint-down(lg) {
+            width: 100%;
+          }
+          @include media-breakpoint-down(sm) {
+            margin-bottom: $margin * 2;
+          }
+        }
+      }
+    }
+  }
+  // Start blog-post style
+  &-post {
+    padding-bottom: $padding * 2.5;
+    border-bottom: 1px solid $blog-border-color;
+    margin-bottom: $spacer * 3.8;
+    &-thumb {
+      overflow: hidden;
+      margin-bottom: $margin * 2.5;
+      border-radius: 30px;
+      img {
+        border-radius: 30px;
+        transform: scale(1) rotate(0deg);
+        transition: $transition-base;
+        width: 100%;
+      }
+    }
+    &-title {
+      font-size: $font-size-base * 1.5;
+      line-height: 34px;
+      margin-bottom: $margin * 2.5;
+      transition: all 0.3s ease-in-out;
+      @include media-breakpoint-down(xl) {
+        font-size: $font-size-base * 1.25;
+      }
+      a {
+        font-family: $font-secondary;
+        color: $blog-heading-color;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    &-author {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-thumb {
+        display: flex;
+        align-items: center;
+        img {
+          width: 36px;
+          height: 36px;
+          border-radius: 100%;
+          margin-right: $margin * 0.8;
+        }
+        p {
+          color: $blog-paragraph-color;
+          font-weight: $font-weight-bold;
+          margin-bottom: 0;
+        }
+      }
+      .blog-post-meta {
+        ul {
+          margin-bottom: 0;
+          p {
+            color: $blog-paragraph-color;
+            font-weight: $font-weight-bold;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    &:hover {
+      .blog-post-thumb {
+        img {
+          transform: scale(1.05) rotate(1.5deg);
+        }
+      }
+      a {
+        color: $blog-paragraph-color;
+      }
+    }
+  }
+
+  //######## Start blog-details style############
+  &-details {
+    &-item {
+      padding-top: $padding * 6.2;
+      @include media-breakpoint-down(xl) {
+        padding-top: $padding * 4;
+      }
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
+      h3 {
+        color: $blog-heading-color;
+        font-size: $font-size-base * 1.9;
+        margin-bottom: $margin * 2.5;
+        line-height: 43px;
+        @include media-breakpoint-down(lg) {
+          font-size: $font-size-base * 1.5;
+        }
+      }
+      p {
+        color: $blog-paragraph-color;
+        font-size: $font-size-base * 1.1;
+        margin-bottom: $margin * 6.4;
+        line-height: 29px;
+        @include media-breakpoint-down(xl) {
+          margin-bottom: $margin * 3;
+        }
+      }
+      .banner {
+        h3 {
+          color: $blog-heading-color;
+          @include media-breakpoint-down(lg) {
+            font-size: $font-size-base * 1.25;
+            text-align: center;
+          }
+        }
+        img {
+          border-radius: 30px;
+          margin-bottom: $margin * 1.25;
+        }
+        p {
+          color: $blog-paragraph-color;
+          margin-bottom: $margin * 3.8;
+          @include media-breakpoint-down(lg) {
+            margin-bottom: $margin * 2;
+            text-align: center;
+          }
+          .anchor-text {
+            color: $blog-link-color;
+          }
+        }
+      }
+      .sociel-icon {
+        display: flex;
+        align-items: center;
+        @include media-breakpoint-down(lg) {
+          justify-content: center;
+        }
+        h3 {
+          color: $blog-heading-color;
+          margin: 0 $spacer * 1.25 0 0;
+        }
+        ul {
+          display: flex;
+          align-items: center;
+          margin-bottom: 0;
+          li {
+            margin-right: $margin;
+            &:last-child {
+              margin-right: 0;
+            }
+            a {
+              transition: all 0.3s ease-in-out;
+              svg {
+                path {
+                  fill: $blog-heading-color;
+                }
+              }
+              &:hover {
+                transform: translateY(-10px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //######## Start blog-related style############
+  &-related {
+    background-color: $blog-related-bg;
+    padding: $spacer * 7.5 0 $spacer * 5;
+    @include media-breakpoint-down(lg) {
+      padding: $spacer * 4 0 $spacer * 5;
+      text-align: center;
+    }
+    h2 {
+      color: $blog-heading-color;
+      font-size: $font-size-base * 1.9;
+      margin-bottom: $spacer * 5;
+    }
+    .blog-post {
+      border-bottom: 0;
+      margin-bottom: 0;
+      @include media-breakpoint-down(lg) {
+        margin-bottom: $margin * 2;
+      }
+      &-title {
+        font-size: $font-size-base * 1.5;
+        @include media-breakpoint-down(lg) {
+          margin-bottom: $margin * 1;
+        }
+      }
+      &-author {
+        @include media-breakpoint-down(lg) {
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+}

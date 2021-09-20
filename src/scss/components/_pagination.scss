@@ -1,0 +1,69 @@
+/********** 
+  9. Pagination Styles 
+**********/
+.page-link {
+  position: relative;
+  display: block;
+  color: $pagination-color;
+  text-decoration: if($link-decoration == none, null, none);
+  background-color: $pagination-bg;
+  border: 1px solid rgba(7, 12, 19, 0);
+  @include transition($pagination-transition);
+  padding: $pagination-padding-y $pagination-padding-x;
+  border-radius: 8px;
+  font-weight: $font-weight-bold;
+  width: 40px;
+  height: 40px;
+  @include media-breakpoint-down(sm) {
+    width: 30px;
+    height: 30px;
+  }
+  &:hover {
+    z-index: 2;
+    color: $secondary-light;
+    text-decoration: if($link-hover-decoration == underline, none, null);
+    background-color: $pagination-active-bg;
+    border-color: rgba(7, 12, 19, 0.1);
+  }
+
+  &:focus {
+    z-index: 3;
+    color: $pagination-focus-color;
+    background-color: $pagination-focus-bg;
+    outline: $pagination-focus-outline;
+    box-shadow: $pagination-focus-box-shadow;
+  }
+}
+
+.page-item {
+  margin-right: $spacer / 2;
+  @include media-breakpoint-down(sm) {
+    margin-right: $spacer / 4;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  &:not(:first-child) .page-link {
+    margin-left: 0;
+  }
+
+  &.active .page-link {
+    z-index: 3;
+    color: $pagination-active-color;
+    @include gradient-bg($pagination-active-bg);
+    border-color: rgba(7, 12, 19, 0.1);
+  }
+
+  &.disabled .page-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: $pagination-color;
+    pointer-events: painted;
+    font-weight: $font-weight-bold !important;
+    font-size: 20px !important;
+    background-color: $pagination-disabled-bg;
+    border-color: rgba(7, 12, 19, 0);
+    padding: 0.2rem 0 !important;
+  }
+}

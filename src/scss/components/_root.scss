@@ -1,0 +1,9 @@
+//Fonts
+// Override Font Family
+/********** 
+  4. Root Styles 
+**********/
+:root {
+  --#{$variable-prefix}font-primary: #{inspect($font-primary)};
+  --#{$variable-prefix}font-secondary: #{inspect($font-secondary)};
+}

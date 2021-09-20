@@ -1,0 +1,57 @@
+/********** 
+  12. faq Styles 
+**********/
+.faq {
+  padding: $spacer * 9.4 0 $spacer * 12.5;
+  @include media-breakpoint-down(xxl) {
+    padding: $spacer * 9.4 0 $spacer * 9;
+  }
+  @include media-breakpoint-down(lg) {
+    padding: $spacer * 5 0 $spacer * 5;
+  }
+  @include media-breakpoint-down(md) {
+    padding: $spacer * 3 0 $spacer * 5;
+  }
+  .list-group {
+    @include media-breakpoint-down(lg) {
+      text-align: center;
+      margin-bottom: $margin * 4;
+    }
+    h2 {
+      color: $faq-heading-color;
+      @include media-breakpoint-down(xxl) {
+        font-size: $font-size-base * 2.5;
+      }
+      @include media-breakpoint-down(xl) {
+        font-size: $font-size-base * 2;
+      }
+    }
+  }
+  .card {
+    padding: $spacer * 3.8 $spacer * 3.8 $spacer * 2.2;
+    background-color: $faq-card-bg;
+    margin-bottom: $margin * 2.5;
+    transition: all 0.3s ease-in-out;
+    box-shadow: none;
+    @include media-breakpoint-down(lg) {
+      text-align: center;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: $spacer * 3.8 $spacer * 2 $spacer * 2.2;
+    }
+    h3 {
+      color: $faq-heading-color;
+      font-size: $font-size-base * 1.9;
+      margin-bottom: $margin * 1.9;
+      letter-spacing: normal;
+      @include media-breakpoint-down(md) {
+        font-size: $font-size-base * 1.5;
+      }
+    }
+    p {
+      color: $faq-paragraph-color;
+      font-size: $font-size-base * 1.25;
+      line-height: 35px;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+/********** 
+ Team Section 
+**********/
+.team {
+  position: relative;
+  padding-bottom: $spacer * 12.5;
+  @include media-breakpoint-down(xxl) {
+    padding-bottom: $spacer * 7;
+  }
+  @include media-breakpoint-down(md) {
+    padding-bottom: $spacer * 5;
+  }
+  .section-header {
+    padding: $spacer * 3 0 $spacer * 6.3;
+    @include media-breakpoint-down(sm) {
+      padding: $spacer * 3 0 $spacer * 4;
+    }
+  }
+  // start####team leader### style
+  &-member,
+  .teams-member {
+    text-align: left;
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+    &-thumb {
+      margin-bottom: $margin * 2.5;
+      img {
+        width: 100%;
+        border-radius: 30px;
+      }
+    }
+    &-details {
+      h3 {
+        color: $team-heading-color;
+        font-size: $font-size-base * 1.875;
+        margin-bottom: $margin / 2;
+        @include media-breakpoint-down(lg) {
+          font-size: $font-size-base * 1.5;
+        }
+      }
+      p {
+        font-size: $font-size-base * 1.25;
+        font-weight: $font-weight-bold;
+        color: $team-paragraph-color;
+        letter-spacing: -1.5px;
+      }
+    }
+  }
+  // start-teams-member style
+  .teams-member-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: $spacer * 5.3;
+    text-align: center;
+    @include media-breakpoint-down(sm) {
+      padding-top: $spacer * 3;
+    }
+    .teams-member {
+      display: inline-block;
+      width: 300px;
+      margin: 0 $spacer * 1.2 $spacer * 2 0;
+      @include media-breakpoint-down(xl) {
+        width: 280px;
+      }
+      @include media-breakpoint-down(md) {
+        width: 230px;
+      }
+      &-thumb {
+        margin-bottom: $margin * 1.9;
+      }
+      &-details {
+        h3 {
+          color: $team-heading-color;
+          font-size: $spacer * 1.7;
+          @include media-breakpoint-down(xl) {
+            font-size: $font-size-base * 1.5;
+          }
+          @include media-breakpoint-down(md) {
+            font-size: $font-size-base * 1.25;
+          }
+        }
+        p {
+          color: $team-paragraph-color;
+          @include media-breakpoint-down(md) {
+            font-size: $font-size-base * 1.1;
+          }
+        }
+      }
+    }
+  }
+  .teams-contact {
+    h2 {
+      color: $team-heading-color;
+    }
+  }
+}

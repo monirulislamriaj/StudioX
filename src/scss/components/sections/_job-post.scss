@@ -1,0 +1,262 @@
+/********** 
+  26. job Sections
+**********/
+
+.job-post,
+.project-two,
+.blog {
+  padding: $spacer * 3.5 0 $spacer * 12.5;
+  @include media-breakpoint-down(xxl) {
+    padding: $spacer * 3.5 0 $spacer * 5;
+  }
+  @include media-breakpoint-down(xl) {
+    padding: $spacer * 0.5 0 $spacer * 3;
+  }
+  @include media-breakpoint-down(lg) {
+    padding: $spacer * 0.5 0 $spacer * 2;
+  }
+  @include media-breakpoint-down(md) {
+    padding: $spacer * 0.5 0 $spacer * 0;
+  }
+  .isotop-menu {
+    text-align: center;
+    button {
+      background: none;
+      border: $border-width solid $jobPost-border-color;
+      text-transform: capitalize;
+      cursor: pointer;
+      margin-right: $spacer;
+      transition: all 0.3s ease-in-out;
+      outline: 0;
+      border-radius: $spacer * 0.75;
+      padding: $spacer * 0.75 $spacer;
+      color: $jobPost-button-color;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-base;
+      &:last-child {
+        margin-right: 0;
+      }
+      @include media-breakpoint-down(xl) {
+        margin-right: $spacer * 0.5;
+        margin-bottom: $spacer;
+      }
+      @include media-breakpoint-down(md) {
+        margin-bottom: $spacer * 2;
+      }
+    }
+    .is-checked {
+      color: $jobPost-active-color;
+      background: $jobPost-button-bg;
+    }
+  }
+  .jobs-post {
+    display: flex;
+    justify-content: space-between;
+    padding: $spacer * 3.7 $spacer * 3.7 $spacer * 2.5;
+    background: $jobPost-bg;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid $jobPost-bg-border;
+    margin-bottom: $margin * 2.5;
+    @include media-breakpoint-down(lg) {
+      padding: $spacer * 3.7 $spacer * 1.7 $spacer * 2.5;
+    }
+    @include media-breakpoint-down(md) {
+      display: block;
+      margin-bottom: $margin * 2;
+    }
+    &:hover {
+      border: 1px solid $jobPost-border;
+      background: $job-post-hover-bg;
+      .jobs-title {
+        h3,
+        h4,
+        p {
+          color: $jobPost-heading-hover;
+        }
+      }
+
+      .apply {
+        a {
+          background-color: $jobPost-button-bg;
+        }
+        p,
+        span {
+          color: $jobapply-heading-hover;
+          svg {
+            path {
+              stroke: $jobPost-stroke-hover;
+            }
+          }
+        }
+      }
+    }
+    .jobs-title {
+      transition: all 0.3s ease-in-out;
+      @include media-breakpoint-down(md) {
+        text-align: center;
+        margin-bottom: $margin * 2;
+      }
+      h3 {
+        color: $jobPost-heading-color;
+        font-size: $font-size-base * 1.9;
+        margin-bottom: $margin * 1.25;
+        letter-spacing: normal;
+        transition: all 0.3s ease-in-out;
+        @include media-breakpoint-down(xl) {
+          font-size: $font-size-base * 1.7;
+        }
+        @include media-breakpoint-down(lg) {
+          font-size: $font-size-base * 1.25;
+        }
+      }
+      h4,
+      p {
+        font-family: $font-primary;
+        font-weight: $font-weight-medium;
+        color: $jobPost-heading-color;
+        font-size: $font-size-base * 1.25;
+        letter-spacing: -0.32px;
+        line-height: 29px;
+        transition: all 0.3s ease-in-out;
+        @include media-breakpoint-down(lg) {
+          font-size: $font-size-base * 1.1;
+        }
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+    .apply {
+      text-align: right;
+      transition: all 0.3s ease-in-out;
+      @include media-breakpoint-down(md) {
+        text-align: center;
+      }
+      a {
+        padding: $spacer * 1.3 $spacer * 2;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: $border-radius * 1.6;
+        margin-bottom: $margin * 1.1;
+        transition: all 0.3s ease-in-out;
+        background: $jobaply-bg;
+      }
+
+      p,
+      span {
+        font-size: $font-size-base * 1.1;
+        color: $jobapply-heading-color;
+        transition: all 0.3s ease-in-out;
+        svg {
+          path {
+            transition: all 0.3s ease-in-out;
+            stroke: $jobPost-stroke-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*************** 
+ start jobs-details
+****************/
+.jobs-details {
+  position: relative;
+  padding-bottom: $spacer * 2.8;
+  //########## start jobs-details-hero style ########
+  &-hero {
+    position: relative;
+    padding-bottom: $spacer * 7.5;
+    margin-bottom: $margin * 7.5;
+    @include media-breakpoint-down(xxl) {
+      padding-bottom: $spacer * 5;
+      margin-bottom: $margin * 5;
+    }
+    @include media-breakpoint-down(xl) {
+      padding-bottom: $spacer * 3;
+      margin-bottom: $margin * 3;
+    }
+    @include media-breakpoint-down(lg) {
+      text-align: center;
+    }
+    h2 {
+      color: $jobPost-heading-color;
+      font-size: $hero-inner-title;
+      line-height: 77px;
+      margin-bottom: $margin * 2.5;
+      @include media-breakpoint-down(lg) {
+        font-size: $font-size-base * 3.5;
+      }
+    }
+
+    h3,
+    p {
+      font-family: $font-primary;
+      font-weight: $font-weight-bold;
+      color: $jobPost-paragraph-color;
+      font-size: $font-size-base * 1.9 !important;
+      margin-bottom: 0;
+      letter-spacing: -1.5px;
+      line-height: 52.5px;
+    }
+  }
+
+  .card {
+    box-shadow: none;
+    border-radius: 0;
+    padding: $spacer * 0;
+    background: none;
+
+    h3,
+    p {
+      color: $jobPost-heading-color;
+      font-size: $font-size-base * 1.9;
+      margin-bottom: $margin * 1.9;
+      width: 75%;
+      @include media-breakpoint-down(lg) {
+        width: 100%;
+      }
+    }
+    p {
+      color: $jobPost-sp-color;
+      font-size: $font-size-base * 1.1;
+      margin-bottom: $margin * 7.5;
+      line-height: 29px;
+      @include media-breakpoint-down(xxl) {
+        margin-bottom: $margin * 5;
+      }
+      @include media-breakpoint-down(xl) {
+        margin-bottom: $margin * 3.5;
+      }
+    }
+    ul.list-unstyled {
+      margin-bottom: $margin * 5.5;
+      width: 75%;
+
+      @include media-breakpoint-down(xxl) {
+        margin-bottom: $margin * 3;
+      }
+      @include media-breakpoint-down(xl) {
+        margin-bottom: $margin * 2;
+      }
+      li {
+        color: $jobPost-sp-color;
+        position: relative;
+        font-size: $font-size-base * 1.25;
+        font-weight: $font-weight-bold;
+        padding-left: $padding * 1.25;
+        margin-bottom: $margin * 2;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 5px;
+          height: 1px;
+          background: $jobPost-sp-color;
+          top: 50%;
+          left: 0;
+        }
+      }
+    }
+  }
+}

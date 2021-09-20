@@ -1,0 +1,120 @@
+// Button variants
+//
+// Override BUtto variants
+//
+
+// scss-docs-start btn-variant-mixin
+@mixin button-variant(
+  $background,
+  $border,
+  $color: color-contrast($background),
+  $hover-background:
+    if(
+      $color == $color-contrast-light,
+      shade-color($background, $btn-hover-bg-shade-amount),
+      tint-color($background, $btn-hover-bg-tint-amount)
+    ),
+  $hover-border:
+    if(
+      $color == $color-contrast-light,
+      shade-color($border, $btn-hover-border-shade-amount),
+      tint-color($border, $btn-hover-border-tint-amount)
+    ),
+  $hover-color: color-contrast($hover-background),
+  $active-background:
+    if(
+      $color == $color-contrast-light,
+      shade-color($background, $btn-active-bg-shade-amount),
+      tint-color($background, $btn-active-bg-tint-amount)
+    ),
+  $active-border:
+    if(
+      $color == $color-contrast-light,
+      shade-color($border, $btn-active-border-shade-amount),
+      tint-color($border, $btn-active-border-tint-amount)
+    ),
+  $active-color: color-contrast($active-background),
+  $disabled-background: $background,
+  $disabled-border: $border,
+  $disabled-color: color-contrast($disabled-background)
+) {
+  color: $color;
+  @include box-shadow(none);
+
+  &:hover {
+    color: $white;
+  }
+
+  .btn-check:focus + &,
+  &:focus {
+    color: $white;
+    @if $enable-shadows {
+      @include box-shadow(none);
+    } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      @include box-shadow(none);
+    }
+  }
+
+  .btn-check:checked + &,
+  .btn-check:active + &,
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    color: $white;
+    &:focus {
+      @if $enable-shadows {
+        @include box-shadow(none);
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        @include box-shadow(none);
+      }
+    }
+  }
+}
+// scss-docs-end btn-variant-mixin
+// scss-docs-start btn-outline-variant-mixin
+@mixin button-outline-variant(
+  $color,
+  $color-hover: color-contrast($color),
+  $active-background: $color,
+  $active-border: $color,
+  $active-color: color-contrast($active-background)
+) {
+  border: 1px solid $color !important;
+  &:hover {
+    color: $white;
+  }
+
+  .btn-check:focus + &,
+  &:focus {
+    color: $white;
+    box-shadow: none;
+  }
+
+  .btn-check:checked + &,
+  .btn-check:active + &,
+  &:active,
+  &.active,
+  &.dropdown-toggle.show {
+    color: $white;
+    &:focus {
+      @if $enable-shadows {
+        @include box-shadow(none);
+      } @else {
+        // Avoid using mixin so we can pass custom focus shadow properly
+        @include box-shadow(none);
+      }
+    }
+  }
+}
+// scss-docs-end btn-outline-variant-mixin
+
+// scss-docs-start btn-size-mixin
+@mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
+  padding: $padding-y $padding-x;
+  @include font-size($font-size);
+  // Manually declare to provide an override to the browser default
+  @include border-radius($border-radius, 0);
+}
+// scss-docs-end btn-size-mixin

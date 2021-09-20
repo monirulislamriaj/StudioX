@@ -1,0 +1,99 @@
+.work {
+  position: relative;
+  background-color: transparent;
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    width: 411px;
+    height: 1px;
+    background: $work-border-color;
+    transform: rotate(90deg);
+    top: 62%;
+    left: calc(50% - 411px / 1 - 14.5px);
+    z-index: 100;
+    @include media-breakpoint-down(xl) {
+      top: 58%;
+      left: calc(54% - 411px / 1 - 14.5px);
+    }
+    @include media-breakpoint-down(lg) {
+      top: 46%;
+      left: 50%;
+      transform: translateX(-50%) rotate(0deg);
+    }
+    @include media-breakpoint-down(sm) {
+      top: 42%;
+      width: 350px;
+    }
+  }
+  &::before {
+    left: calc(60% - 320px / 2 - 14.5px);
+    @include media-breakpoint-down(xxl) {
+      left: calc(63% - 320px / 2 - 14.5px);
+    }
+    @include media-breakpoint-down(xl) {
+      left: calc(60% - 320px / 2 - 14.5px);
+    }
+    @include media-breakpoint-down(lg) {
+      top: 73%;
+      left: 50%;
+      transform: translateX(-50%) rotate(0deg);
+    }
+    @include media-breakpoint-down(sm) {
+      top: 70%;
+    }
+  }
+  .section-header {
+    padding: $spacer * 9.4 0 $spacer * 5.7;
+    @include media-breakpoint-down(xxl) {
+      padding: $spacer * 5 0 $spacer * 5;
+    }
+    @include media-breakpoint-down(md) {
+      padding: $spacer * 5 0 $spacer * 3;
+    }
+    @include media-breakpoint-down(sm) {
+      padding: $spacer * 4 0 $spacer * 1;
+    }
+  }
+  .card {
+    text-align: left;
+    padding: $spacer * 0 $spacer * 3.5;
+    box-shadow: none;
+    background: $work-bg-color;
+    transition: all 0.3s ease-in-out;
+    @include media-breakpoint-down(xxl) {
+      padding: $spacer * 0 $spacer * 2.5;
+    }
+    @include media-breakpoint-down(lg) {
+      text-align: center;
+      padding: $spacer * 2 $spacer * 2;
+      margin-bottom: $spacer * 2;
+    }
+    @include media-breakpoint-down(md) {
+      margin: $spacer * 2 0;
+      &:hover {
+        background-color: $dimGray;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      padding: $spacer * 3 $spacer * 2 $spacer * 2;
+    }
+    &-icon {
+      margin-bottom: $spacer * 3.6;
+    }
+    &-body {
+      padding: 0;
+      .card-title {
+        margin-bottom: $spacer * 2;
+        font-size: $font-size-base * 1.5;
+        line-height: $spacer * 2.2;
+        color: $work-heading-color;
+      }
+      .card-text {
+        font-size: $font-size-base * 1.1;
+        line-height: 29px;
+        color: $work-paragraph-color;
+      }
+    }
+  }
+}

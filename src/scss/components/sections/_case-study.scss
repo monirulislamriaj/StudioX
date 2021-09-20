@@ -1,0 +1,123 @@
+/*************** 
+ start case-study page
+****************/
+.case-study,
+.case-study-two {
+  position: relative;
+  margin-bottom: $spacer * 9;
+  @include media-breakpoint-down(xxl) {
+    margin-bottom: $spacer * 4;
+  }
+  @include media-breakpoint-down(md) {
+    margin-bottom: $spacer * 2;
+  }
+  &-header-wraper {
+    position: relative;
+    background: linear-gradient(
+      109.9deg,
+      #ffefd9 6.21%,
+      #ffe6c6 28.86%,
+      #96fff9 70.45%,
+      #928fff 94.94%
+    );
+    margin-bottom: $spacer * 6.6;
+    @include media-breakpoint-down(xxl) {
+      margin-bottom: $spacer * 1;
+    }
+    @include media-breakpoint-down(sm) {
+      margin-bottom: $spacer * 0;
+    }
+  }
+  .card {
+    position: relative;
+    padding: 0;
+    margin: $spacer * 7 0 $spacer * 5.3;
+    border: none;
+    box-shadow: none;
+    background: $case-study-card-bg;
+    border-radius: 0;
+    @include media-breakpoint-down(xxl) {
+      margin: $spacer * 5 0 $spacer * 0;
+    }
+    @include media-breakpoint-down(lg) {
+      margin: $spacer * 3 0 $spacer * 0;
+      text-align: center;
+    }
+    .logo {
+      width: 70px;
+      height: 70px;
+      margin-bottom: $margin * 1.9;
+      @include media-breakpoint-down(lg) {
+        margin: 0 auto $margin * 1.9;
+      }
+    }
+    &-body {
+      padding: 0;
+      .card-title {
+        color: $case-study-heading-color;
+        font-size: $font-size-base * 1.9;
+        margin-bottom: $margin * 2.5;
+      }
+      p {
+        color: $case-study-paragraph-color;
+        font-size: $font-size-base * 1.1;
+        line-height: 29px;
+      }
+      ul {
+        @include media-breakpoint-down(lg) {
+          text-align: left;
+        }
+        li {
+          color: $case-study-paragraph-color;
+          font-size: $font-size-base * 1.25;
+          line-height: 35px;
+          margin-bottom: $spacer;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+  }
+  .case-study-item {
+    transition: all 0.3s ease-in-out;
+    @include media-breakpoint-down(lg) {
+      padding: $padding * 2;
+      border-radius: $spacer * 2.5;
+      &:hover {
+        background: $case-study-hover-color;
+      }
+    }
+  }
+  // start case-study-two ////
+  &-two {
+    padding: $spacer * 7.5 0 $spacer * 7.5;
+    background: $case-study-bg;
+    margin-bottom: 0;
+    @include media-breakpoint-down(xl) {
+      padding: $spacer * 4 0 $spacer * 4;
+    }
+    @include media-breakpoint-down(md) {
+      padding: $spacer * 4 0 $spacer * 0;
+    }
+    .card {
+      text-align: center;
+      background: none;
+      margin: 0 0 $spacer * 1.5;
+      border-radius: 40px;
+
+      h2 {
+        color: $case-study-sh-color;
+        font-size: $font-size-base * 4.4;
+        margin: $spacer * 3 0 $spacer * 3.9;
+        @include media-breakpoint-down(xxl) {
+          margin: $spacer * 3 0 $spacer * 1.9;
+        }
+        @include media-breakpoint-down(xl) {
+          font-size: $font-size-base * 3.4;
+        }
+        @include media-breakpoint-down(md) {
+          font-size: $font-size-base * 2.5;
+        }
+      }
+    }
+  }
+}

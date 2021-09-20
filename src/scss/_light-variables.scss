@@ -1,0 +1,682 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+// Color system
+// scss-docs-start gray-color-variables
+$white: #fff !default;
+$gray-300: #ebebeb !default;
+$gray-500: #f9fafc !default;
+$gray-900: #0e0e0f !default;
+$black: #000 !default;
+$text-muted: $gray-500;
+
+// scss-docs-start color-variables
+$blue: #0d6efd !default;
+$indigo: #6610f2 !default;
+$purple: #ede4ff !default;
+$pink: #ffecef !default;
+$red: #ff6880 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffa438 !default;
+$green: #1cb08d !default;
+$teal: #8c56ff !default;
+$cyan: #cffff4 !default;
+$light-green: #d3f2ec !default;
+// scss-docs-end color-variables
+
+// ###Custom button color###
+$button-primary-bg: #1565ff;
+$button-primary-color: #fff;
+$button-P-active-color: #1565ff;
+$button-P-hover-color: #1a1e2a;
+$button-P-border-color: #1565ff;
+$button-P-border-hover-color: #30343f;
+
+$button-secondary-bg: #fff;
+$button-secondary-color: #1a1e2a;
+$button-S-active-color: #282e3e;
+$button-S-hover-color: #1565ff;
+$button-S-border-color: #dddddd;
+$button-S-border-hover-color: #1565ff;
+
+$button-white-bg: #fff;
+$button-white-color: #494c56;
+$button-hover-color: #fff;
+$button-W-hover-color: #1565ff;
+$button-W-border-color: #dddddd;
+$button-W-border-hover-color: #1565ff;
+
+$white-cta-bg: #1a1e2a;
+$white-cta-color: #fff;
+$button-WC-active-color: #1a1e2a;
+$button-WC-hover-color: #1565ff;
+$button-WC-border-color: rgba(255, 255, 255, 0.1);
+$button-WC-border-hover-color: #1565ff;
+
+$button-dark-bg: #1a1e2a;
+$button-dark-color: #fff;
+$button-D-active-color: #282e3e;
+$button-D-hover-color: #1565ff;
+$button-D-border-color: #1a1e2a;
+$button-D-border-hover-color: #1565ff;
+
+$button-links-bg: #fff;
+$button-links-color: #1a1e2a;
+$button-hover-color: #1a1e2a;
+$button-LI-active-color: #f4f4f4;
+$button-LI-hover-color: #f4f4f4;
+$button-LI-border-color: #dddddd;
+$button-LI-border-hover-color: #282e3e;
+$button-LI-sticky-bg: rgba(248, 248, 248, 0.33);
+$button-LI-sticky-color: #494c56;
+
+$button-submit-bg: #1565ff;
+$button-submit-color: #fff;
+$button-SUB-hover-color: #282e3e;
+$button-SUB-border-color: rgba(255, 255, 255, 0.1);
+// ###Custom aria color###
+$body-bg-color: #fff;
+$custom-bg: #fff;
+$custom-heading-color: #1a1e2a;
+$custom-paragraph-color: #dddddd;
+$custom-sp-color: #1a1e2a;
+$custom-border-color: #e9e9ea;
+$custom-toggle-color: #1565ff;
+// #### navbar aria Custom color####
+$navbar-bg: rgba(244, 244, 244, 0.6);
+$navbar-logo-color: #1a1e2a;
+$navbar-fill-color: #fff;
+$navbar-link-color: #494c56;
+$navbar-active-color: #1565ff;
+$navbar-button-color: #1a1e2a;
+//dropdwon-style
+$navbar-dropdwon-bg: #f4f4f4;
+$navbar-dborder-color: #e9e9ea;
+$navbar-ditem-color: #494c56;
+$navbar-item-border-color: #e9e9ea;
+
+// ####hero aria Custom color####
+$hero-bg-color: #fff;
+$hero-heading-color: #1a1e2a;
+$hero-paragraph-color: #494c56;
+$hero-sp-color: #494c56;
+$hero-link-color: #1a1e2a;
+$hero-fill-color: #494c56;
+$hero-border-color: #dddddd;
+// $hero-button-color:
+
+//### Work aria Custom color####
+$work-bg-color: #fff;
+$work-heading-color: #1a1e2a;
+$work-paragraph-color: #494c56;
+$work-border-color: #dddddd;
+// $work-link-color: #fff;
+// $work-fill-color: #fff;
+
+// ###service aria Custom color###
+$service-bg-light: #fff;
+$service-heading-color: #1a1e2a;
+$service-paragraph-color: #dddddd;
+$service-border-color: #e9e9ea;
+$service-after-color: #f7f7f7;
+$service-before-color: #f9f9f9;
+$service-button-color: #1d2333;
+// ###services-two aria Custom color###
+$services-nav-bg: #fff;
+$services-nav-border: #e9e9ea;
+$services-navlink-color: #1a1e2a;
+$services-navactive-color: #1565ff;
+$services-heading-color: #1a1e2a;
+$services-paragraph-color: #494c56;
+$services-border-color: #e9e9ea;
+$services-banner-bg: #ffffff;
+$services-banner-border: #e9e9ea;
+// ###services-three aria Custom color###
+$services-text-color: #494c56;
+$OpenSource-card-bg: #f4f4f4;
+$OpenSource-hover-bg: #282e3e;
+$OpenSource-border-color: #e9e9ea;
+$OpenSource-border-hover-color: #282e3e;
+$OpenSource-link-color: #1565ff;
+$OpenSource-link-bg: #f4f4f4;
+$OpenSource-titel-color: #1a1e2a;
+$OpenSource-titel-hover: #fff;
+$OpenSource-subtitel-color: #494c56;
+
+// ###blog aria Custom color###
+$blog-card-bg: #f8f8f8;
+$blog-text-color: #494c56;
+$blog-meta-color: #dddddd;
+$blog-heading-color: #1a1e2a;
+$blog-paragraph-color: #494c56;
+$blog-after-color: #252e4a;
+$blog-link-color: #1565ff;
+$blog-border-color: #e9e9ea;
+$blog-related-bg: #f4f4f4;
+
+$blog-link-bg: #282e3e;
+$blog-titel-color: #fff;
+$blog-subtitel-color: #dddddd;
+// ###company aria Custom color###
+$company-fill-color: #74767c;
+
+// ###project aria Custom color###
+$project-bg-light: #282e3e;
+$project-heading-color: #1a1e2a;
+$project-paragraph-color: #1a1e2a;
+$project-SH-color: #1a1e2a;
+$project-SP-color: #494c56;
+// ###project-two aria Custom color###
+$project-border-color: #282e3e;
+$project-button-bg: #1a1e2a;
+$project-button-border: #1d2333;
+$projectTwo-heading-color: #1a1e2a;
+$projectTwo-paragraph-color: #494c56;
+// ###project-three aria Custom color###
+$projectThree-heading-color: #1a1e2a;
+$projectThree-paragraph-color: #494c56;
+
+// ###testimonials aria Custom color###
+$testimonials-bg: #1d2231;
+$testimonials-bg-dark: #fff;
+$testimonials-heading-color: #fff;
+$testimonials-paragraph-color: #fff;
+$testimonials-after-color: #dddddd;
+$testimonials-circle-color: #74767c;
+$testimonials-fill-color: #494c56;
+
+// ###cta aria Custom color###
+$cta-bg: #1a1e2a;
+$cta-heading-color: #fff;
+$cta-paragraph-color: #e9e9ea;
+// $cta-after-color: #fff;
+// $cta-circle-color: #74767c;
+// $cta-fill-color: #fff;
+
+// ###about  aria Custom color###
+$about-bg: #fff;
+$aboutUs-heading-color: #1a1e2a;
+$about-paragraph-color: #494c56;
+
+// ###counter-up aria Custom color###
+$counter-up-bg: #f4f4f4;
+$counter-logo-bg: #fff;
+$counter-up-heading-color: #1a1e2a;
+$counter-up-paragraph-color: #494c56;
+$counter-up-border-color: #dddddd;
+
+// ###team aria Custom color###
+$team-heading-color: #1a1e2a;
+$team-paragraph-color: #494c56;
+$team-border-color: #394155;
+
+// ###faq aria Custom color###
+$faq-card-bg: #f4f4f4;
+$faq-heading-color: #1a1e2a;
+$faq-paragraph-color: #494c56;
+$faq-border-color: #394155;
+
+// ###jobPost aria Custom color###
+$jobPost-bg: #f4f4f4;
+$jobPost-bg-border: #e9e9ea;
+$job-post-hover-bg: #1a1e2a;
+$jobPost-border: #e9e9ea;
+
+$jobaply-bg: #ffffff;
+$jobapply-heading-color: #1a1e2a;
+$jobapply-heading-hover: #fff;
+
+$jobPost-button-bg: #1565ff;
+$jobPost-button-color: #494c56;
+$jobPost-active-color: #fff;
+$jobPost-heading-color: #1a1e2a;
+$jobPost-paragraph-color: #494c56;
+$jobPost-heading-hover: #fff;
+$jobPost-sp-color: #494c56;
+$jobPost-border-color: #dddddd;
+
+$jobPost-stroke-color: #1a1e2a;
+$jobPost-stroke-hover: #fff;
+
+// ###apply-form aria Custom color###
+$apply-bg: #f4f4f4;
+$apply-form-bg: #ffffff;
+$apply-heading-color: #1a1e2a;
+$apply-paragraph-color: #494c56;
+$apply-input-color: #f4f4f4;
+$apply-text-color: #1a1e2a;
+$apply-border-color: #1a1e2a;
+$apply-border: #dddddd;
+$apply-before-color: #f4f4f4;
+
+// ###contact-form aria Custom color###
+$contact-form-bg: #f4f4f4;
+$form-bg: #fff;
+$contact-heading-color: #1a1e2a;
+$contact-sub-heading-color: #494c56;
+$contact-paragraph-color: #494c56;
+
+$contact-input-bg: #f4f4f4;
+$contact-input-border: #dddddd;
+
+$contact-border-color: #494c56;
+$contact-before-color: #f4f4f4;
+
+$contact-border-chack: #1a1e2a;
+$contact-border: #f4f4f4;
+$form-check-bg: #f4f4f4;
+
+// ###client aria Custom color###
+$client-bg: #f4f4f4;
+$client-hove-bg: #e9e9ea;
+$client-heading-color: #1a1e2a;
+$client-paragraph-color: #494c56;
+$client-fill-color: #1a1e2a;
+
+// ###case-study aria Custom color###
+$case-study-bg: #282e3e;
+$case-study-card-bg: #fff;
+$case-study-heading-color: #1a1e2a;
+$case-study-sh-color: #fff;
+$case-study-paragraph-color: #494c56;
+$case-study-hover-color: #020202;
+
+// ###footer aria Custom color###
+$footer-bg: #f8f8f8;
+$footer-heading-color: #74767c;
+$footer-link-color: #1a1e2a;
+$footer-anchor-color: #1565ff;
+$footer-span-color: #74767c;
+$footer-slink-color: #494c56;
+$footer-fill-color: #494c56;
+$footer-logo-color: #1a1e2a;
+$footer-circle-color: #fff;
+$footer-stock-color: #e9e9ea;
+//########## End Custom section colorm ######
+
+$primary-light: #1565ff;
+$primary-dark: #01a8b1;
+$secondary-dark: #282c33;
+$paragraph-color: #dddddd;
+$DarkGray: #74767c;
+$secondary-light: #1a1e2a;
+$Gainsboro: #282e3e;
+$SlateGray: #1d2231;
+$anchor-color: #f6d19d;
+$dimGray: #020202;
+$LightGray: #252e4a;
+$border-dark: #364369;
+$border-light: #dddddd;
+$border-LightGray: #ffc370;
+$border-before: #1d2333;
+$border-after: #2a3143;
+$border-dimGray: #30343f;
+$border-Gainsboro: #282e3e;
+// scss-docs-start colors-map
+$colors: (
+  //Custom  Color
+  "secondary-dark": $secondary-dark,
+  "$dimGray": $dimGray,
+  "anchor-color": $anchor-color
+) !default;
+// scss-docs-end colors-map
+// scss-docs-start theme-color-variables
+$primary: #1fadad !default;
+$secondary: #9360ff !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: #4cbdbd !default;
+$dark: $gray-900 !default;
+// scss-docs-end theme-color-variables
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  //Custom Theme Color
+  "white": $white,
+  "primary-light": $primary-light,
+  "secondary-light": $secondary-light,
+  "primary-dark": $primary-dark,
+  "secondary-dark": $secondary-dark,
+  "anchor-color": $anchor-color,
+) !default;
+// scss-docs-end theme-colors-map
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio: 4.5 !default;
+
+$enable-negative-margins: true !default;
+// Prefix for :root CSS variables
+$variable-prefix: bs- !default;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem !default;
+$padding: $spacer;
+$margin: $spacer;
+$spacers: (
+  0: 0,
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer * 0.75,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 2.5,
+  7: $spacer * 3,
+  // Create my  own spacers
+  8: $spacer * 3.5,
+  9: $spacer * 4,
+  10: $spacer * 4.5,
+  11: $spacer * 5,
+  12: $spacer * 5.5,
+  13: $spacer * 6,
+  14: $spacer * 6.5,
+  15: $spacer * 7,
+  16: $spacer * 7.5,
+  17: $spacer * 8,
+  18: $spacer * 8.5,
+  19: $spacer * 9,
+  20: $spacer * 9.5,
+  21: $spacer * 10,
+  22: $spacer * 11,
+  23: $spacer * 11.5,
+  24: $spacer * 12,
+  25: $spacer * 13,
+  26: $spacer * 14,
+  27: $spacer * 15.5,
+  28: $spacer * 18,
+  29: $spacer * 17,
+);
+
+// $spacers: map-merge($spacers, $custom-spacers);
+$negative-spacers: if(
+  $enable-negative-margins,
+  negativify-map($spacers),
+  null
+) !default;
+// scss-docs-end spacer-variables-maps
+// Position
+//
+// Define the edge positioning anchors of the position utilities.
+// scss-docs-start position-map
+$position-values: (
+  0: 0,
+  5: 5%,
+  10: 10%,
+  15: 15%,
+  20: 20%,
+  25: 25%,
+  30: 30%,
+  50: 50%,
+  100: 100%,
+) !default;
+// scss-docs-end position-map
+// Body
+//
+// Settings for the `<body>` element.
+$body-bg: #282e3e;
+$body-color: $gray-900 !default;
+$body-text-align: null !default;
+$body-bg-dark: #fcfcfc;
+// Links
+//
+// Style anchor elements.
+$link-color: $black !default;
+$link-decoration: none !default;
+$link-shade-percentage: 20% !default;
+$link-hover-color: $primary !default;
+$link-hover-decoration: null !default;
+$stretched-link-pseudo-element: after !default;
+$stretched-link-z-index: 1 !default;
+// Paragraphs
+//
+// Style p element.
+$paragraph-margin-bottom: 1rem !default;
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
+// scss-docs-end grid-breakpoints
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+) !default;
+// scss-docs-end container-max-widths
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+$grid-row-columns: 6 !default;
+$gutters: $spacers !default;
+// Container padding
+$container-padding-x: $grid-gutter-width / 2 !default;
+// Custom Grid Stlyes for Display Grid css
+$grid-template-columns: (
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6,
+) !default;
+// Custom Grid Stlyes for Display Grid css
+// Components
+//
+// Define common padding and border radius sizes and more.
+// scss-docs-start border-variables
+$border-width: 1px !default;
+$border-widths: (
+  0: 0px,
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+) !default;
+$border-color: transparent !default;
+// scss-docs-end border-variables
+// scss-docs-start border-radius-variables
+$border-radius: 0.8rem;
+$border-radius-sm: 1rem;
+$border-radius-medium: 1.25rem;
+$border-radius-lg: 1.75rem;
+$border-radius-xxl: 2.5rem;
+$border-radius-pill: 50rem;
+$border-radius-circle: 100%;
+// scss-docs-end border-radius-variables
+// scss-docs-start box-shadow-variables
+$box-shadow: 0px 20px 60px rgba(50, 61, 88, 0.09) !default;
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
+$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
+$transition-base: all 0.3s ease-in-out !default;
+$transition-fade: opacity 0.15s linear !default;
+// scss-docs-start collapse-transition
+$transition-collapse: height 0.35s ease !default;
+// scss-docs-end collapse-transition
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+// scss-docs-start font-variables
+// stylelint-disable value-keyword-case
+// Over Ride Font Variable for change Fonts
+//Import fonts from https://fonts.google.com/
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+// Custom Font Variables
+$font-primary: "DM Sans", sans-serif !default;
+$font-secondary: "Poppins", sans-serif !default;
+// stylelint-enable value-keyword-case
+$font-family-base: var(--#{$variable-prefix}font-primary) !default;
+$font-family-secondary: var(--#{$variable-prefix}font-secondary) !default;
+$font-family-code: var(--#{$variable-prefix}font-monospace) !default;
+// $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
+// $font-size-base effects the font size of the body text
+$font-size-root: null !default;
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size-base * 0.875 !default;
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-extbold: 800 !default;
+$font-weight-Black: 900 !default;
+$font-weight-bolder: bolder !default;
+$font-weight-base: $font-weight-normal !default;
+// Custom Font Weight
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$line-height-base: 1.5 !default;
+$line-height-sm: 1.25 !default;
+$line-height-lg: 2 !default;
+// Custom Font Size
+$h1-font-size: $font-size-base * 5.3 !default;
+$h2-font-size: $font-size-base * 2.8 !default;
+$h3-font-size: $font-size-base * 2;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base !default;
+$h7-font-size: $font-size-base * 2.25;
+$hero-inner-title: $font-size-base * 4.4;
+// scss-docs-end font-variables
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+  7: $h7-font-size,
+) !default;
+// scss-docs-end font-sizes
+// scss-docs-start headings-variables
+//OVerride bootstrap default variables
+$headings-margin-bottom: $spacer / 2 !default;
+$headings-font-family: $font-secondary !default;
+$headings-font-style: null !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.2;
+$headings-color: $black !default;
+// scss-docs-end headings-variables
+// scss-docs-start display-headings
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem,
+) !default;
+$display-font-weight: 400 !default;
+// scss-docs-end type-variables
+// Custom Font Styles
+$letter-spacing-base: 0.5px;
+$letter-spacing: 0.05px;
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+// scss-docs-start input-btn-variables
+// Over Ride Input type in a Form Padding
+$input-btn-padding-y: 1rem !default;
+$input-btn-padding-x: 0.75rem !default;
+
+// scss-docs-end input-btn-variables
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background, and border color.
+// scss-docs-start btn-variables
+// Override btn Variable
+$btn-padding-y: 0.8rem !default;
+$btn-padding-x: 2rem !default;
+$btn-font-size: 1rem !default;
+$btn-padding-y-sm: 0.9rem !default;
+$btn-padding-x-sm: 1.9rem !default;
+$btn-font-size-sm: 0.9rem !default;
+$btn-padding-y-lg: 1.4rem !default;
+$btn-padding-x-lg: 2rem !default;
+$btn-font-size-lg: 1.1rem !default;
+$btn-font-weight: $font-weight-medium !default;
+$btn-box-shadow: none !default;
+$btn-focus-width: none !default;
+$btn-focus-box-shadow: none !default;
+$btn-active-box-shadow: none !default;
+$btn-border-radius-sm: $border-radius !default;
+$btn-border-radius-lg: $border-radius !default;
+
+// Navbar
+
+// scss-docs-start navbar-variables
+$navbar-padding-y: $spacer * 1.9;
+$navbar-padding-x: null !default;
+
+// scss-docs-start badge-variables
+$badge-font-size: 0.85em !default;
+$badge-font-weight: $font-weight-bold !default;
+$badge-color: $white !default;
+$badge-padding-y: 0.35rem !default;
+$badge-padding-x: 0.65rem !default;
+$badge-border-radius: $border-radius !default;
+// scss-docs-end badge-variables
+// scss-docs-start pagination-variables
+$pagination-hover-color: $link-hover-color !default;
+$pagination-hover-bg: $white !default;
+$pagination-hover-border-color: $gray-300 !default;
+//Navbar Over Ride
+// scss-docs-start navbar-variables
+$navbar-padding-y: 20px !default;
+$navbar-padding-x: 0 !default;
+$navbar-nav-link-padding-x: 1rem !default;
+// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
+$caret-spacing: 0;
+$navbar-brand-padding-y: 0 !default;
+$component-active-bg: $secondary-dark;
+$input-placeholder-color: $secondary-light;
+$form-select-color: $secondary-light;
+$component-active-color: $secondary-dark;
+$component-active-bg: rgba(7, 12, 19, 0.04);
+// scss-docs-end navbar-variables
+// scss-docs-start navbar-theme-variables
+// Form Variables
+$input-color: #ffffff;
+$input-bg: rgba(255, 255, 255, 0.2);
+$input-border-radius: 10px;
+$input-border-color: rgba(255, 255, 255, 0.4);
+$input-focus-bg: $input-bg;
+$input-font-size: 1.125rem;
+$input-font-weight: 500;
+$input-line-height: 1.6;
+$input-padding-y: 10px;
+$input-padding-x: 20px;

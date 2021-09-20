@@ -1,0 +1,93 @@
+/********** 
+ Hero home Styles 
+**********/
+
+.hero {
+  position: relative;
+  background: $hero-bg-color;
+  padding-bottom: $spacer * 14.5;
+  @include media-breakpoint-down(xxl) {
+    padding-bottom: $spacer * 11;
+  }
+  @include media-breakpoint-down(xl) {
+    padding-bottom: $spacer * 7;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-bottom: $spacer * 4;
+  }
+  &-content {
+    h1 {
+      color: $hero-heading-color;
+      line-height: 93px;
+      @include media-breakpoint-down(xxl) {
+        font-size: $font-size-base * 4.5;
+      }
+      @include media-breakpoint-down(xl) {
+        font-size: $font-size-base * 3.5;
+        line-height: 75px;
+      }
+      @include media-breakpoint-down(md) {
+        font-size: $font-size-base * 3;
+        line-height: 70px;
+      }
+      @include media-breakpoint-down(md) {
+        font-size: $font-size-base * 2.5;
+        line-height: 50px;
+      }
+    }
+    p {
+      color: $hero-paragraph-color;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-base * 1.25;
+    }
+    .video {
+      &-iframe {
+        position: relative;
+      }
+      &-icon {
+        a {
+          padding: 22px 32px;
+          border: 1px solid $hero-border-color;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          color: $hero-link-color;
+          border-radius: $border-radius-medium;
+          @include media-breakpoint-down(xl) {
+            padding: 22px 20px;
+          }
+        }
+        svg {
+          margin-right: 12px;
+          path {
+            fill: $hero-heading-color;
+          }
+        }
+        span {
+          font-size: 18px;
+          font-weight: $font-weight-bold;
+          @include media-breakpoint-down(xl) {
+            font-size: $font-size-base;
+          }
+        }
+      }
+    }
+  }
+  &-banner {
+    img {
+      max-width: 100%;
+    }
+  }
+  .scroll-down {
+    a {
+      font-size: 18px;
+      font-weight: $font-weight-bold;
+      color: $hero-sp-color;
+      svg {
+        path {
+          stroke: $hero-fill-color;
+        }
+      }
+    }
+  }
+}

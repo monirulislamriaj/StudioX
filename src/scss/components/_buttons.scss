@@ -1,0 +1,473 @@
+// Override Bootstrap Button style
+// Button Base styles
+//
+/********** 
+  6. Button Styles 
+**********/
+.btn {
+  font-weight: $font-weight-medium;
+  letter-spacing: $letter-spacing-base;
+  font-weight: $font-weight-bold;
+
+  &:hover {
+    color: $white;
+  }
+
+  .btn-check:focus + &,
+  &:focus {
+    color: $white !important;
+    outline: 0;
+    @include box-shadow(none);
+  }
+
+  .btn-check:checked + &,
+  .btn-check:active + &,
+  &:active,
+  &.active {
+    color: $white !important;
+    @include box-shadow(none);
+
+    &:focus {
+      color: $white !important;
+      @include box-shadow(none);
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    pointer-events: none;
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+  @include media-breakpoint-down(sm) {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+//
+// Alternate buttons
+//
+
+// scss-docs-start btn-variant-loops
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+// scss-docs-end btn-variant-loops
+
+//
+//Over Ride Default Button Styles
+//
+
+.btn {
+  &-primary {
+    position: relative;
+    height: 73px;
+    text-align: center;
+    line-height: 73px;
+    text-transform: capitalize;
+    background: $button-primary-bg;
+    border: $btn-border-width solid $button-P-border-color;
+    overflow: hidden;
+    transition: 0.5s all ease-in-out;
+    span {
+      color: $button-primary-color;
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s all ease-in-out;
+      z-index: 2;
+      svg {
+        transform: translateY(-1px);
+        margin-left: 5px;
+      }
+      &:nth-child(1) {
+        transition: 0.5s all ease-in-out;
+        transform: translateY(-23px);
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -250px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 350px;
+      height: 250px;
+      background: $button-P-hover-color;
+      border-radius: 50%;
+      transition: 0.5s all ease-in-out;
+    }
+    btn-check:focus + &,
+    &:focus,
+    &:active,
+    &:active:focus,
+    &:hover {
+      border: $btn-border-width solid $button-P-border-hover-color;
+      background: $button-P-hover-color;
+      span {
+        transform: translateY(-100%);
+        &:nth-child(1) {
+          transform: translateY(-150px);
+        }
+        &:nth-child(2) {
+          transform: translateY(-49px);
+        }
+      }
+      &::before {
+        bottom: -150px;
+      }
+    }
+  }
+  &-secondary {
+    position: relative;
+    height: 71px;
+    text-align: center;
+    line-height: 71px;
+    text-transform: capitalize;
+    overflow: hidden;
+    transition: 0.5s all ease-in-out;
+    background: $button-secondary-bg;
+    border: $btn-border-width solid $button-S-border-color;
+    span {
+      color: $button-secondary-color;
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s all ease-in-out;
+      z-index: 2;
+      svg {
+        transform: translateY(-1px);
+        margin-left: 5px;
+        path {
+          stroke: $button-secondary-color;
+        }
+      }
+      &:nth-child(1) {
+        transition: 0.5s all ease-in-out;
+        transform: translateY(-23px);
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -250px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 350px;
+      height: 250px;
+      background: $button-S-hover-color;
+      border-radius: 50%;
+      transition: 0.5s all ease-in-out;
+    }
+    btn-check:focus + &,
+    &:focus,
+    &:active,
+    &:active:focus,
+    &:hover {
+      border: $btn-border-width solid $button-S-border-hover-color;
+      background: $button-secondary-bg;
+      span {
+        transform: translateY(-100%);
+        &:nth-child(1) {
+          transform: translateY(-150px);
+        }
+        &:nth-child(2) {
+          transform: translateY(-45px);
+        }
+      }
+      &::before {
+        bottom: -150px;
+      }
+    }
+  }
+  &-white {
+    position: relative;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    text-transform: capitalize;
+    overflow: hidden;
+    transition: 0.5s all ease-in-out;
+    background: $button-white-bg;
+    border: $btn-border-width solid $button-W-border-color;
+    span {
+      color: $button-white-color;
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s all ease-in-out;
+      z-index: 2;
+      svg {
+        transform: translateY(-1px);
+        margin-left: 5px;
+      }
+      &:nth-child(1) {
+        transition: 0.5s all ease-in-out;
+        transform: translateY(-22px);
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -250px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 350px;
+      height: 250px;
+      background: $button-W-hover-color;
+      border-radius: 50%;
+      transition: 0.5s all ease-in-out;
+    }
+    btn-check:focus + &,
+    &:focus,
+    &:active,
+    &:active:focus,
+    &:hover {
+      border: $btn-border-width solid $button-W-border-hover-color;
+      background: $button-white-bg;
+      span {
+        color: $button-hover-color;
+        transform: translateY(-100%);
+        &:nth-child(1) {
+          transform: translateY(-150px);
+        }
+        &:nth-child(2) {
+          transform: translateY(-45px);
+        }
+      }
+      &::before {
+        bottom: -150px;
+      }
+    }
+  }
+  &-white-cta {
+    position: relative;
+    height: 77px;
+    text-align: center;
+    line-height: 77px;
+    text-transform: capitalize;
+    overflow: hidden;
+    transition: 0.5s all ease-in-out;
+    background: $white-cta-bg;
+    border: $btn-border-width solid $button-WC-border-color;
+    span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s all ease-in-out;
+      z-index: 2;
+      color: $white-cta-color;
+      svg {
+        transform: translateY(-1px);
+        margin-left: 5px;
+      }
+      &:nth-child(1) {
+        transition: 0.5s all ease-in-out;
+        transform: translateY(-23px);
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -250px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 350px;
+      height: 250px;
+      background: $button-WC-hover-color;
+      border-radius: 50%;
+      transition: 0.5s all ease-in-out;
+    }
+    btn-check:focus + &,
+    &:focus,
+    &:active,
+    &:active:focus,
+    &:hover {
+      border: $btn-border-width solid $button-WC-border-hover-color;
+      background: $white-cta-bg;
+      span {
+        transform: translateY(-100%);
+        &:nth-child(1) {
+          transform: translateY(-150px);
+        }
+        &:nth-child(2) {
+          transform: translateY(-52px);
+        }
+      }
+      &::before {
+        bottom: -150px;
+      }
+    }
+  }
+  &-dark {
+    position: relative;
+    height: 71px;
+    text-align: center;
+    line-height: 71px;
+    text-transform: capitalize;
+    overflow: hidden;
+    transition: 0.5s all ease-in-out;
+    background: $button-dark-bg;
+    border: $btn-border-width solid $button-D-border-color;
+    span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s all ease-in-out;
+      z-index: 2;
+      color: $button-dark-color;
+      svg {
+        transform: translateY(-1px);
+        margin-left: 5px;
+      }
+      &:nth-child(1) {
+        transition: 0.5s all ease-in-out;
+        transform: translateY(-23px);
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -250px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 350px;
+      height: 250px;
+      background: $button-D-hover-color;
+      border-radius: 50%;
+      transition: 0.5s all ease-in-out;
+    }
+    btn-check:focus + &,
+    &:focus,
+    &:active,
+    &:active:focus,
+    &:hover {
+      border: $btn-border-width solid $button-D-border-hover-color;
+      background: $button-dark-bg;
+      span {
+        transform: translateY(-100%);
+        &:nth-child(1) {
+          transform: translateY(-150px);
+        }
+        &:nth-child(2) {
+          transform: translateY(-49px);
+        }
+      }
+      &::before {
+        bottom: -150px;
+      }
+    }
+  }
+  &-links {
+    background: $button-links-bg;
+    color: $button-links-color;
+    border: $btn-border-width solid $button-LI-border-color;
+    position: relative;
+    padding: 15px 30px !important;
+    font-size: $font-size-base !important;
+
+    btn-check:focus + &,
+    &:focus,
+    &:active,
+    &:active:focus,
+    &:hover {
+      color: $button-hover-color !important;
+      background: $button-LI-active-color;
+      border: $btn-border-width solid $button-LI-border-color;
+    }
+  }
+  &-label {
+    padding: $input-padding-y * 2.2 $input-padding-x * 1.8;
+    background-color: $apply-input-color;
+    color: $apply-heading-color;
+    border: none;
+    border-radius: $input-border-radius;
+    line-height: 1.45;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-base * 1.25;
+    width: auto;
+    svg {
+      margin-right: 11px;
+      path {
+        stroke: $apply-heading-color;
+      }
+    }
+    &:hover {
+      color: $apply-heading-color;
+    }
+    &:focus {
+      color: $apply-heading-color !important;
+    }
+  }
+  &-submit {
+    background: $button-submit-bg;
+    color: $button-submit-color;
+    line-height: 1.6;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    //font-weight: $font-weight-extbold;
+    padding: $padding * 1.4 $padding * 2 !important;
+    span {
+      svg {
+        path {
+          stroke: $button-submit-color;
+        }
+      }
+    }
+    &:active,
+    &:focus,
+    &:hover,
+    &:checked + .btn:focus,
+    &:active + .btn:focus,
+    &:active:focus {
+      background: $button-SUB-hover-color;
+      border: $btn-border-width solid $button-SUB-border-color;
+      color: $button-submit-color;
+      span {
+        svg {
+          path {
+            stroke: $button-submit-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Button Sizes
+//
+
+.btn-lg {
+  @include button-size(
+    $btn-padding-y-lg,
+    $btn-padding-x-lg,
+    $btn-font-size-lg,
+    $border-radius-medium
+  );
+}
+
+.btn-sm {
+  @include button-size(
+    $btn-padding-y-sm,
+    $btn-padding-x-sm,
+    $btn-font-size-sm,
+    $border-radius
+  );
+}
+.btn-link {
+  text-decoration: underline;
+  &:hover {
+    color: $primary;
+  }
+}

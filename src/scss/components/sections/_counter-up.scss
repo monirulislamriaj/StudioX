@@ -1,0 +1,92 @@
+/********** 
+ Counter Up Section 
+**********/
+.counter-up {
+  background: $counter-up-bg;
+  padding: $padding * 7.5 0 $padding * 8;
+  position: relative;
+  @include media-breakpoint-down(xxl) {
+    padding: $padding * 5 0;
+  }
+  &-wrapper {
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    @include media-breakpoint-down(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: $margin * 5;
+      text-align: center;
+    }
+
+    .counter-percent {
+      margin-bottom: $spacer * 3.7;
+      border-bottom: 1px solid $counter-up-border-color;
+      padding-bottom: $padding * 1.25;
+      @include media-breakpoint-down(md) {
+        margin-bottom: $spacer * 2;
+        border-bottom: 1px solid $counter-up-border-color;
+        padding-bottom: $padding * 2;
+      }
+    }
+    .counter,
+    .percent {
+      color: $counter-up-heading-color;
+      font-family: $font-family-secondary;
+      font-size: $font-size-base * 6.25;
+      font-weight: $font-weight-semibold;
+      line-height: 1;
+      letter-spacing: 0.05px;
+      font-variant: lining-nums;
+      @include media-breakpoint-down(xxl) {
+        font-size: $font-size-base * 3;
+      }
+      @include media-breakpoint-down(xl) {
+        font-size: $font-size-base * 2;
+      }
+    }
+  }
+  &-content {
+    @include media-breakpoint-down(md) {
+      margin-bottom: $margin * 5;
+      padding: 0 $padding * 5;
+    }
+    @include media-breakpoint-down(sm) {
+      margin-bottom: $margin * 1;
+      padding: 0 $padding * 3;
+    }
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $counter-logo-bg;
+      width: 80px;
+      height: 80px;
+      border-radius: $spacer * 1.25;
+      margin-bottom: $spacer * 4.4;
+      @include media-breakpoint-down(xxl) {
+        margin-bottom: $spacer * 2.5;
+      }
+      @include media-breakpoint-down(lg) {
+        margin: 0 auto $spacer * 2.5;
+      }
+    }
+    h4 {
+      color: $counter-up-heading-color;
+      line-height: 34px;
+      margin-bottom: $spacer * 1.9;
+      @include media-breakpoint-down(xxl) {
+        font-size: $font-size-base * 1.25;
+      }
+    }
+    p {
+      color: $counter-up-paragraph-color;
+      font-size: $font-size-base * 1.1;
+      margin-bottom: 0;
+      line-height: 29px;
+      @include media-breakpoint-down(xl) {
+        font-size: $font-size-base;
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+/*************** 
+ start client section
+****************/
+.client {
+  padding: $spacer * 3.5 0 $spacer * 0;
+  @include media-breakpoint-down(xxl) {
+    padding: $spacer * 0 0 $spacer * 0;
+  }
+  .section-header {
+    padding-bottom: $spacer * 7;
+    @include media-breakpoint-down(xxl) {
+      padding-bottom: $spacer * 4;
+    }
+  }
+  .card {
+    background: $client-bg;
+    border-radius: 40px;
+    padding: $spacer * 3.8;
+    margin-bottom: $spacer * 2.5;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+    @include media-breakpoint-down(xl) {
+      padding: $spacer * 2.5;
+    }
+    @include media-breakpoint-down(lg) {
+      text-align: center;
+    }
+    @include media-breakpoint-down(md) {
+      padding: $spacer * 2;
+    }
+    &-icon {
+      margin-bottom: $margin * 3.2;
+      svg {
+        path {
+          fill: $client-fill-color;
+        }
+      }
+    }
+    &-body {
+      padding: 0;
+      .card-title {
+        color: $client-heading-color;
+        font-size: $font-size-base * 1.9;
+        line-height: 43.5px;
+        font-family: $font-primary;
+        margin-bottom: $spacer * 3.2;
+        @include media-breakpoint-down(md) {
+          font-size: $font-size-base * 1.5;
+        }
+      }
+      .card-text {
+        color: $client-paragraph-color;
+        font-size: $font-size-base * 1.25;
+        font-weight: $font-weight-medium;
+        margin-bottom: 0;
+        letter-spacing: -1.5px;
+        line-height: 29px;
+      }
+    }
+    &:hover {
+      background: $client-hove-bg;
+    }
+  }
+}

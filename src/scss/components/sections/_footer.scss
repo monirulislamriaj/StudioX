@@ -1,0 +1,244 @@
+/********** 
+footer
+**********/
+.footer {
+  position: relative;
+  padding: 100px 0;
+  background: $footer-bg;
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 60px;
+  }
+  &-shape-wrapper {
+    overflow: hidden;
+    bottom: 0%;
+    .shape-one,
+    .shape-two {
+      position: absolute;
+      top: 56%;
+      left: 50%;
+      transform: translateX(-50%);
+      svg {
+        line {
+          stroke: $footer-stock-color;
+        }
+        @include media-breakpoint-down(xxl) {
+          width: 1150px;
+        }
+        @include media-breakpoint-down(xl) {
+          width: 950px;
+        }
+        @include media-breakpoint-down(lg) {
+          width: 750px;
+        }
+        @include media-breakpoint-down(sm) {
+          width: 350px;
+        }
+      }
+      @include media-breakpoint-down(lg) {
+        top: 70%;
+      }
+      @include media-breakpoint-down(md) {
+        top: 69%;
+      }
+      @include media-breakpoint-down(sm) {
+        top: 64%;
+      }
+    }
+    .shape-two {
+      top: 77.5%;
+      @include media-breakpoint-down(xl) {
+        top: 80.5%;
+      }
+      @include media-breakpoint-down(lg) {
+        top: 81.5%;
+      }
+      @include media-breakpoint-down(md) {
+        top: 84.5%;
+      }
+      @include media-breakpoint-down(sm) {
+        top: 88.5%;
+      }
+    }
+  }
+  .anchor-text {
+    color: $footer-anchor-color;
+  }
+  &-widget {
+    margin-bottom: $spacer * 9.4;
+    position: relative;
+    @include media-breakpoint-down(lg) {
+      margin-bottom: $spacer * 4;
+      text-align: center;
+    }
+    @include media-breakpoint-down(sm) {
+      margin-bottom: $spacer * 2;
+    }
+    h6 {
+      margin-bottom: $spacer * 2.5;
+      color: $footer-heading-color;
+      font-family: $font-primary;
+      font-size: $spacer * 1.1;
+      font-weight: normal;
+      letter-spacing: normal;
+      @include media-breakpoint-down(md) {
+        margin-bottom: $spacer * 1.5;
+      }
+    }
+    ul {
+      margin-bottom: $spacer * 0;
+      li {
+        display: block;
+        a {
+          font-size: 20px;
+          line-height: 20px;
+          padding: $spacer * 0.8 $spacer * 0.2 $spacer * 0;
+          margin-bottom: $spacer * 2;
+          font-weight: $font-weight-bold;
+          transition: all 0.3s ease-in-out;
+          color: $footer-link-color;
+          span {
+            position: absolute;
+            top: 0;
+            svg {
+              path {
+                fill: $footer-anchor-color;
+              }
+            }
+          }
+          &:hover {
+            color: $footer-anchor-color;
+          }
+        }
+      }
+    }
+  }
+  &-contact-info {
+    position: relative;
+    margin-bottom: $spacer * 8.4;
+    @include media-breakpoint-down(lg) {
+      margin-bottom: $spacer * 4;
+    }
+    // p {
+    //   font-size: $font-size-base * 1.1;
+    //   font-weight: $font-weight-normal;
+    //   color: $footer-span-color;
+    //   margin-bottom: $spacer * 2.5;
+    //   @include media-breakpoint-down(md) {
+    //     margin-bottom: $spacer * 0.5;
+    //   }
+    // }
+    .address {
+      margin-bottom: $spacer * 2.5;
+    }
+    .address,
+    .contact {
+      display: flex;
+      align-items: center;
+      @include media-breakpoint-down(lg) {
+        justify-content: space-between;
+      }
+      @include media-breakpoint-down(md) {
+        display: block;
+        text-align: center;
+        margin-bottom: $spacer * 2.5;
+      }
+      span {
+        display: flex;
+        align-items: center;
+        font-size: $spacer * 1.1;
+        color: $footer-span-color;
+        font-weight: normal;
+        a,
+        p {
+          font-size: $spacer * 1.25;
+          color: $footer-slink-color;
+          font-weight: $font-weight-bold;
+          margin-bottom: 0;
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+  .social-icon {
+    position: relative;
+    text-align: right;
+    @include media-breakpoint-down(lg) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include media-breakpoint-down(sm) {
+      display: block;
+      text-align: center;
+    }
+    ul {
+      margin-bottom: $spacer * 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: $spacer * 2;
+      @include media-breakpoint-down(lg) {
+        margin-bottom: $spacer * 0;
+      }
+      @include media-breakpoint-down(sm) {
+        justify-content: center;
+      }
+      li {
+        display: inline-block;
+        margin-right: $spacer;
+        &:last-child {
+          margin-right: $spacer * 0;
+        }
+        a {
+          transition: all 0.3s ease-in-out;
+          svg {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(0px);
+            path {
+              transition: all 0.3s ease-in-out;
+              fill: $footer-fill-color;
+            }
+          }
+          &:hover {
+            svg {
+              transform: translateY(-10px);
+              // path {
+              //   fill: $paragraph-color;
+              // }
+            }
+          }
+        }
+      }
+    }
+    a {
+      font-size: $spacer * 1.25;
+    }
+
+    p {
+      font-size: $spacer * 1.1;
+      color: $footer-span-color;
+      font-weight: $font-weight-normal;
+      margin-bottom: 0;
+      margin-left: 12px;
+    }
+  }
+  &-logo {
+    position: relative;
+    justify-content: space-between;
+    a {
+      svg {
+        path {
+          fill: $footer-logo-color;
+          &:nth-child(3) {
+            fill: $footer-circle-color;
+          }
+        }
+      }
+    }
+    p {
+      font-size: $font-size-base * 1.25;
+      font-weight: $font-weight-bold;
+      color: $footer-slink-color;
+    }
+  }
+}

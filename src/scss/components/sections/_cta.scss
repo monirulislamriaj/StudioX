@@ -1,0 +1,35 @@
+.cta {
+  background: $cta-bg;
+  padding: $spacer * 12.5 0 $spacer * 11.3;
+  @include media-breakpoint-down(xxl) {
+    padding: $spacer * 6 0 $spacer * 7;
+  }
+  @include media-breakpoint-down(md) {
+    padding: $spacer * 4 0 $spacer * 4;
+  }
+  &-content {
+    .banner {
+      margin-bottom: $spacer * 1.25;
+    }
+    h2 {
+      font-size: $font-size-base * 3.1;
+      line-height: 55px;
+      color: $cta-heading-color;
+      margin-bottom: $spacer * 1.5;
+      @include media-breakpoint-down(md) {
+        font-size: $font-size-base * 2;
+        line-height: 50px;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: $font-size-base * 1.7;
+        line-height: 40px;
+      }
+    }
+    p {
+      font-size: 18px;
+      margin: 0 auto $spacer * 3.2;
+      color: $cta-paragraph-color;
+      line-height: 29px;
+    }
+  }
+}

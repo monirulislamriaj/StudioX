@@ -1,0 +1,40 @@
+// Base class
+//
+// Requires one of the contextual, color modifier classes for `color` and
+// `background-color`.
+/********** 
+  10. Badges
+**********/
+.badge {
+  display: inline-block;
+  padding: $badge-padding-y $badge-padding-x;
+  @include font-size($badge-font-size);
+  font-weight: $badge-font-weight;
+  line-height: 1.1;
+  //color: $primary;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  //border: $border-width solid $primary;
+  @include border-radius($badge-border-radius);
+  @include gradient-bg();
+
+  // Empty badges collapse automatically
+  &:empty {
+    display: none;
+  }
+}
+
+// Quick fix for badges in buttons
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+/**********
+Card Header Styles
+***********/
+@each $color, $value in $theme-colors {
+  .card-bg-#{$color} {
+    @include section-header($value);
+  }
+}

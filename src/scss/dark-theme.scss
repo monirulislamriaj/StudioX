@@ -1,0 +1,77 @@
+/*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+PROJECT:	StudioX
+-------------------------------------------------------------------*/
+/* ====== index =====
+1. Bootstrap Source Styles 
+2. Custom Utilities
+3.  Reboot
+4.  Root
+5.  Navbar
+6.  Buttons
+7.  Card
+8.  Dropdown
+9.  Pagination
+10. Badges
+11. Breadcrumb
+12. From Control
+13. Form Select
+14. Custom CSS
+15. Hero
+16. Service Section
+17. Counter Up Section
+18. Contact Form Section
+19. Blog Section
+20. Project Section
+
+===================== */
+@import "bootstrap/scss/functions";
+@import "dark-variables";
+@import "components/utilities";
+/********** 
+  1. Bootstrap Source Styles 
+**********/
+@import "bootstrap/scss/bootstrap";
+//Customizes bootstrap components
+/********** 
+   End of Bootstrap Source Styles 
+**********/
+//Customizes bootstrap mixins
+@import "components/mixins/buttons";
+@import "components/mixins/custom-mixins";
+//Customizes bootstrap contents
+@import "components/reboot";
+@import "components/root";
+@import "components/navbar";
+@import "components/buttons";
+@import "components/card";
+@import "components/caret";
+@import "components/dropdown";
+@import "components/pagination";
+@import "components/badge";
+@import "components/breadcrumb";
+@import "components/form-control";
+@import "components/accordion";
+@import "components/form-select";
+@import "components/form-check";
+//Theme Sections And Pages Sass
+@import "components/sections/custom";
+@import "components/sections/hero";
+@import "components/sections/work";
+@import "components/sections/services";
+@import "components/sections/company";
+@import "components/sections/project";
+@import "components/sections/testimonial";
+@import "components/sections/cta";
+@import "components/sections/about";
+@import "components/sections/counter-up";
+@import "components/sections/team";
+@import "components/sections/faq";
+@import "components/sections/job-post";
+@import "components/sections/apply-form";
+@import "components/sections/client";
+@import "components/sections/case-study";
+@import "components/sections/blog";
+//@import "components/sections/darkMode";
+@import "components/sections/footer";
+@import "components/sections/contact-form";

@@ -1,0 +1,130 @@
+//
+//All Custom Mixin will be found Here
+//
+
+// scss-docs-start Section Header Mixin
+/********** 
+  1. Custom  Utilities
+**********/
+/* Mixin and style for Section background*/
+@mixin section-header(
+  $background,
+  $color: if($background == $white, $black, $white),
+  $color-dark: if($background == $white, $secondary, $white),
+  $color-paragraph: if($background == $white, $paragraph-color, $white),
+  $color-form: if($background == $white, $white, $background),
+  $color-border: if($background == $white, $primary, $white),
+  $color-btn: if($background == $white, $primary, $white)
+) {
+  background: $background;
+  color: $color;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color;
+  }
+  p {
+    color: $color-paragraph;
+  }
+  span {
+    color: $color-dark;
+  }
+  .btn-white {
+    color: $background;
+    &:active,
+    &:focus {
+      color: $background !important;
+    }
+  }
+  svg {
+    z-index: -1;
+    path {
+      // stroke: $color-dark;
+      opacity: 0.75;
+    }
+  }
+  input.form-control {
+    flex: 1;
+  }
+  .btn-light-green {
+    color: $color;
+    background: mix($white, $background, 20%);
+    border-color: $background;
+  }
+  .form-control {
+    background-color: $background;
+    border-color: $color-border !important;
+    color: $color-border;
+  }
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $color-border;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $color-border;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $color-border;
+  }
+  .btn-primary {
+    background: $color-btn;
+    color: $background;
+    border-color: $color-border !important;
+    &:active,
+    &:focus {
+      color: $primary !important;
+    }
+  }
+}
+// scss-docs-end Section Fease Mixin
+// Grid Tempalte  Styles
+/* Mixin and style for display Grid*/
+@mixin grid-template(
+  $column: 2,
+  $fraction: 1fr,
+  $column-gap: 30px,
+  $row-gap: 30px
+) {
+  grid-template-columns: repeat($column, $fraction);
+  column-gap: $column-gap;
+  row-gap: $row-gap;
+}
+
+@each $column, $value in $grid-template-columns {
+  .grid-template-#{$column} {
+    @include grid-template($value);
+  }
+}
+
+/* Mixin and style for Badge soft*/
+@mixin badge-soft($background, $color: darken($background, 30%)) {
+  background: $background;
+  color: $color;
+  letter-spacing: 0.3px;
+}
+//svg Fill{
+@mixin svg-fill($color){
+  fill: $color;
+}
+@each $color, $value in $theme-colors {
+  .svg-fill-#{$color} {
+    @include svg-fill($value);
+  }
+}
+
+@mixin svg-stroke($color){
+  stroke: $color;
+}
+@each $color, $value in $theme-colors {
+  .svg-stroke-#{$color} {
+    @include svg-stroke($value);
+  }
+}

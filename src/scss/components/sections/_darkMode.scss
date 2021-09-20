@@ -1,0 +1,1223 @@
+#toggle {
+  position: fixed;
+  top: 200px;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: #494c56;
+  border-radius: 0.5rem;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &::before {
+    content: "\f185";
+    font-family: fontAwesome;
+    font-size: 24px;
+  }
+}
+body.darkmode #toggle {
+  background: $primary-light;
+  color: #fff;
+  &::before {
+    content: "\f186";
+    font-family: fontAwesome;
+  }
+}
+body.darkmode {
+  background: #fff;
+}
+
+body.darkmode {
+  .separator-bottom,
+  .separator-bottom-two {
+    &::after {
+      background: #e9e9ea;
+    }
+  }
+}
+body.darkmode {
+  .section-header {
+    h2 {
+      color: $secondary-light;
+    }
+  }
+
+  // inner-hero-page
+  .inner-hero-page,
+  .case-study-hero,
+  .inner-blog-details {
+    background-color: $white;
+    h2 {
+      color: $secondary-light;
+    }
+    h3,
+    p {
+      color: $secondary-light;
+    }
+    p {
+      color: $secondary-light;
+    }
+  }
+
+  // inner-blog-details
+  .inner-blog-details {
+    .blog-post-meta,
+    .blog-post-tag {
+      ul {
+        li {
+          &::before {
+            background: $LightGray;
+          }
+        }
+      }
+    }
+  }
+}
+body.darkmode {
+  .navbar-brand {
+    svg {
+      path {
+        fill: black;
+        &:nth-child(3) {
+          fill: $white;
+        }
+      }
+    }
+  }
+  .sticky-nav {
+    background: $white;
+  }
+  .navbar-nav {
+    .nav-link {
+      color: #494c56;
+      &:hover {
+        color: $primary-light;
+      }
+    }
+    .btn-links {
+      color: #494c56;
+      background: white;
+      border: 1px solid #dddddd;
+    }
+    .dropdown-menu {
+      background: white;
+      border: 1px solid #494c56;
+      .dropdown-item {
+        color: #494c56;
+        &:hover,
+        .navbar-nav .dropdown-item:focus {
+          color: $primary-light !important;
+        }
+      }
+    }
+    .dropdown li.dropdown-megamenu-column-items {
+      border-bottom: 1px solid #494c56;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  /********** 
+  19. hero Section
+**********/
+  .hero {
+    background: $white;
+    &-content {
+      h1 {
+        color: $secondary-light;
+      }
+      p {
+        color: $secondary-light;
+      }
+      .video {
+        &-icon {
+          a {
+            color: $secondary-light;
+            border: 1px solid $border-light;
+          }
+          svg {
+            path {
+              fill: $secondary-dark;
+            }
+          }
+        }
+      }
+      .btn-primary {
+        border: 1px solid $primary-light;
+        &:hover {
+          border: 1px solid $secondary-light;
+        }
+      }
+    }
+
+    .scroll-down {
+      a {
+        color: $secondary-light;
+      }
+    }
+  }
+  /********** 
+  19. work Section
+**********/
+  .work {
+    background: $white;
+    &::before,
+    &::after {
+      background: $paragraph-color;
+    }
+    h2,
+    h4 {
+      color: $secondary-light;
+    }
+    .card {
+      background: $white;
+      p {
+        color: #494c56;
+      }
+    }
+  }
+  /********** 
+  19. services Section
+**********/
+  .services {
+    background: $white;
+    box-shadow: 0px 100px 150px rgba(0, 0, 0, 0.09);
+    border: 1px solid #e9e9ea;
+
+    &::after {
+      background: #f7f7f7;
+      box-shadow: 0px 100px 150px rgba(0, 0, 0, 0.09);
+    }
+    &::before {
+      background: #f9f9f9;
+      box-shadow: 0px 100px 150px rgba(0, 0, 0, 0.09);
+    }
+
+    &-item {
+      &:hover {
+        &::before {
+          background-color: #ffc370;
+        }
+      }
+      &-content {
+        a {
+          color: $secondary-light;
+        }
+      }
+    }
+    .btn-secondary {
+      background: $white;
+      border-color: $border-light;
+      span {
+        color: $secondary-light;
+      }
+      &:hover {
+        span {
+          color: $white;
+        }
+      }
+    }
+    // start services-two
+    &-two,
+    &-three {
+      &-shape-wrapper {
+        .shape-one,
+        .shape-two,
+        .shape-three,
+        .shape-four,
+        .shape-five,
+        .shape-six,
+        .shape-siven {
+          svg {
+            line {
+              stroke: #e9e9ea;
+            }
+          }
+        }
+      }
+      // start services-two-nav
+      .navbar {
+        background: $white;
+        border-top: 1px solid #e9e9ea;
+        border-bottom: 1px solid #e9e9ea;
+      }
+      .nav-pills .nav-link.active,
+      .nav-pills .show > .nav-link {
+        color: $primary-light;
+      }
+      &-nav {
+        ul {
+          li {
+            a {
+              color: #494c56;
+            }
+          }
+        }
+      }
+
+      &-item {
+        // start service-item
+        .service-item {
+          &-banner {
+            background: $white;
+            border: 1px solid #e9e9ea;
+            box-shadow: 0px 40px 80px rgba(0, 0, 0, 0.05);
+          }
+          &-content {
+            p {
+              color: #494c56;
+            }
+            .accordion {
+              &-item {
+                border: 1px solid #e9e9ea !important;
+                background: $white;
+                border-right: 0 !important;
+                border-left: 0 !important;
+                &:first-child {
+                  border-top: 0 !important;
+                }
+                .accordion-button {
+                  color: #494c56;
+                  &:hover {
+                    color: $secondary-light;
+                  }
+                }
+                .accordion-body {
+                  color: #494c56;
+                }
+              }
+            }
+          }
+
+          // Read some case study style
+          .card {
+            &-banner {
+              border-radius: 40px;
+            }
+            &-body {
+              padding: $spacer * 3.2 0 0;
+              h3 {
+                color: $secondary-light;
+              }
+              p {
+                color: #494c56;
+              }
+              .btn-white {
+                background: $white;
+                border-color: $border-light;
+                span {
+                  color: #494c56;
+                }
+                &:hover {
+                  border-color: $primary-light;
+                  span {
+                    color: $white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // start services-three
+    &-three {
+      h3.sub-title {
+        color: $secondary-light;
+      }
+      .service-item {
+        // Ebooks style
+        .card {
+          &-body {
+            h3 {
+              color: $secondary-light;
+            }
+            p {
+              color: #494c56;
+            }
+            .btn-secondary {
+              background: $white;
+              border-color: $border-light;
+              span {
+                color: $secondary-light;
+                svg {
+                  path {
+                    transition: all 0.3s ease-in-out;
+                    stroke: $secondary-light;
+                  }
+                }
+              }
+              &:hover {
+                span {
+                  color: $white;
+                  svg {
+                    path {
+                      stroke: $white;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      // Open Source style
+
+      .OpenSource {
+        .card-item {
+          background: #f4f4f4;
+          border: 1px solid #e9e9ea;
+          .card-body {
+            padding: 0;
+            h3 {
+              color: $secondary-light;
+            }
+            p {
+              color: #494c56;
+            }
+          }
+          .btn-secondary {
+            background: $white;
+            border-color: $border-light;
+            span {
+              color: $secondary-light;
+              svg {
+                path {
+                  transition: all 0.5s ease-in-out;
+                  stroke: $secondary-light;
+                }
+              }
+            }
+          }
+          &:hover {
+            border: 1px solid #282e3e;
+            background: #282e3e;
+            .card-body {
+              h3 {
+                color: $white;
+              }
+              p {
+                color: $paragraph-color;
+              }
+            }
+            a {
+              border-color: $primary-light;
+              background-color: $primary-light;
+              span {
+                color: $white;
+                svg {
+                  path {
+                    stroke: $white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /********** 
+  19. company Section
+**********/
+  .company {
+    background: transparent;
+    &-wrapper {
+      .item {
+        svg {
+          path {
+            fill: #74767c;
+          }
+        }
+      }
+    }
+  }
+  /********** 
+  19. project Section
+**********/
+  .project,
+  .project-two,
+  .project-three {
+    &-item-header-wraper {
+      background: linear-gradient(
+        109.9deg,
+        #ffe1b7 6.21%,
+        #ffe1ba 28.86%,
+        #7cfff7 70.45%,
+        #6966ff 94.94%
+      );
+    }
+    // project-item-header
+    &-item-header {
+      &-content {
+        h2 {
+          color: $secondary-light;
+        }
+        p {
+          color: $secondary-light;
+        }
+      }
+    }
+    &-item {
+      &-content {
+        h2 {
+          color: $secondary-light;
+        }
+        p {
+          color: #494c56;
+        }
+        .btn-white {
+          background: $white;
+          span {
+            color: #494c56;
+          }
+          border: 1px solid #dddddd;
+
+          &:hover {
+            span {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+    ////////start project-two////////////
+    &-two,
+    &-three {
+      .card {
+        &-banner {
+          border-radius: 40px;
+        }
+        &-body {
+          padding: $spacer * 3.2 0 0;
+          h3 {
+            color: $secondary-light;
+          }
+          p {
+            color: #494c56;
+          }
+          .btn-secondary {
+            background: $white;
+            border-color: $border-light;
+            span {
+              color: $secondary-light;
+            }
+            &:hover {
+              span {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /********** 
+  19. Testimonial Section
+**********/
+  .testimonials {
+    &-slider {
+      .slick-next {
+        &:after {
+          background: $border-light;
+        }
+      }
+      .slick-prev,
+      .slick-next {
+        span {
+          svg {
+            path {
+              stroke: #494c56;
+            }
+          }
+        }
+
+        &:hover {
+          svg {
+            circle {
+              animation: dash 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+            }
+          }
+        }
+      }
+      .slick-next:before,
+      .slick-prev:before {
+        display: none;
+      }
+    }
+  }
+  /********** 
+. cta Section
+**********/
+  .cta {
+    background: #1a1e2a;
+
+    &-content {
+      h2 {
+        color: $white;
+      }
+      p {
+        color: #e9e9ea;
+      }
+    }
+  }
+
+  /********** 
+ About Section 
+**********/
+  .about {
+    background: $white;
+    // start about hero section
+    &-hero {
+      &-content {
+        h2 {
+          color: $secondary-light;
+        }
+      }
+    }
+    // start about section
+    &-item {
+      &-content {
+        p {
+          color: #494c56;
+        }
+      }
+      &-banner {
+        img {
+          border: 1px solid #e9e9ea;
+        }
+      }
+    }
+  }
+
+  /********** 
+ Counter Up Section 
+**********/
+
+  .counter-up {
+    background: #f4f4f4;
+
+    &-wrapper {
+      .counter-percent {
+        border-bottom: 1px solid $border-light;
+      }
+      .counter,
+      .percent {
+        color: $secondary-light;
+      }
+    }
+    &-content {
+      &-icon {
+        background-color: $white;
+      }
+      h4 {
+        color: $secondary-light;
+      }
+      p {
+        color: #494c56;
+      }
+    }
+  }
+
+  /********** 
+ Team Section 
+**********/
+  .team {
+    // start####team leader### style
+    &-member,
+    .teams-member {
+      &-details {
+        h3 {
+          color: $secondary-light;
+        }
+        p {
+          color: $secondary-light;
+        }
+      }
+    }
+    // start-teams-member style
+    .teams-member-wrapper {
+      h3 {
+        color: $secondary-light;
+      }
+      .teams-member {
+        &-details {
+          h3 {
+            color: $secondary-light;
+          }
+          p {
+            color: $secondary-light;
+          }
+        }
+      }
+    }
+    .teams-contact {
+      h2 {
+        color: $secondary-light;
+      }
+      .btn-primary {
+        border-color: $primary-light;
+        &:hover {
+          border-color: $secondary-light;
+        }
+      }
+    }
+  }
+  /********** 
+  12. faq Styles 
+**********/
+  .faq {
+    .list-group {
+      h2 {
+        color: $secondary-light;
+      }
+    }
+    .card {
+      background: #f4f4f4;
+
+      h3 {
+        color: $secondary-light;
+      }
+      p {
+        color: #494c56;
+      }
+    }
+  }
+  /********** 
+  26. job Sections
+**********/
+
+  .job-post,
+  .project-two,
+  .blog {
+    .isotop-menu {
+      button {
+        border: $border-width solid $border-light;
+        color: #494c56;
+      }
+      .is-checked {
+        color: $white !important;
+        background: $primary-light !important;
+      }
+    }
+    .jobs-post {
+      background: #f4f4f4;
+      border: 1px solid #e9e9ea;
+      &:hover {
+        background: #282e3e;
+        border: 1px solid $border-light;
+        .jobs-title {
+          h3 {
+            color: $white;
+          }
+          h4 {
+            color: $white;
+          }
+          p {
+            color: $white;
+          }
+        }
+        .apply {
+          a {
+            background-color: $primary-light;
+            border-color: $primary-light;
+            span {
+              color: $white;
+            }
+            svg {
+              path {
+                stroke: $white;
+              }
+            }
+          }
+          p {
+            color: $white;
+          }
+        }
+      }
+      .jobs-title {
+        h3 {
+          color: $secondary-light;
+        }
+        h4 {
+          color: $secondary-light;
+        }
+        p {
+          color: #494c56;
+        }
+      }
+      .apply {
+        a {
+          background: $white;
+          border-color: $border-light;
+          svg {
+            path {
+              stroke: $secondary-light;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+        p {
+          color: #494c56;
+        }
+
+        span {
+          color: $secondary-light;
+        }
+      }
+    }
+  }
+
+  /*************** 
+ start jobs-details page
+****************/
+  .jobs-details {
+    //########## start jobs-details-hero style ########
+    &-hero {
+      h2 {
+        color: $secondary-light;
+      }
+
+      h3,
+      p {
+        color: #494c56;
+      }
+    }
+
+    .card {
+      background: none;
+
+      h3 {
+        color: $secondary-light;
+      }
+      p {
+        color: #494c56;
+      }
+      ul.list-unstyled {
+        li {
+          color: #494c56;
+          &::before {
+            background: #74767c;
+          }
+        }
+      }
+    }
+  }
+  /*************** 
+ start apply-form  page
+****************/
+  .apply-form {
+    background-color: #f4f4f4;
+
+    form {
+      background: $white;
+
+      textarea {
+        background-color: #f4f4f4;
+        color: $secondary-light;
+        border: 1px solid $border-light;
+      }
+      ::placeholder {
+        color: #494c56;
+      }
+      h3 {
+        color: $secondary-light;
+      }
+      .Information {
+        &::before {
+          background: #f4f4f4;
+        }
+
+        &-input {
+          .input-box {
+            .input-box-input {
+              border: 1px solid $border-light;
+              color: #494c56;
+              background: #f4f4f4;
+              /* Change border when input focus*/
+              &:focus {
+                border-color: $secondary-light;
+              }
+            }
+            .input-box-label {
+              color: #494c56;
+              background-color: #f4f4f4;
+            }
+          }
+          .input-box-input:focus ~ .input-box-label,
+          .input-box-input:not(:placeholder-shown).input-box-input:not(:focus)
+            ~ .input-box-label {
+            background-color: $white;
+          }
+        }
+      }
+      .btn-check[type="file"] + label {
+        background: #f4f4f4;
+        color: $secondary-light !important;
+        border: 1px solid $border-light;
+        svg {
+          path {
+            stroke: $secondary-light;
+          }
+        }
+      }
+    }
+  }
+  /*************** 
+ start client page
+****************/
+
+  .client {
+    .card {
+      background: #f4f4f4;
+
+      &-icon {
+        svg {
+          path {
+            fill: $secondary-light;
+          }
+        }
+      }
+      &-body {
+        .card-title {
+          color: $secondary-light;
+        }
+        .card-text {
+          color: #494c56;
+        }
+      }
+      &:hover {
+        background: #e9e9ea;
+      }
+    }
+  }
+  /*************** 
+ start case-study page
+****************/
+  .case-study,
+  .case-study-two {
+    .card {
+      background: $white;
+      &-body {
+        padding: 0;
+        .card-title {
+          color: $secondary-light;
+        }
+        p {
+          color: #494c56;
+        }
+        ul {
+          li {
+            color: #494c56;
+          }
+        }
+      }
+    }
+
+    // start case-study-two ////
+    &-two {
+      background: #282e3e;
+    }
+  }
+  /********** 
+ Blog  Section 
+**********/
+  .blog,
+  .taxonomy {
+    // blog-header-style
+    .card {
+      background: #f8f8f8;
+      border: 1px solid #e9e9ea;
+      .blog-post-content {
+        .blog-post-meta {
+          ul {
+            a {
+              border: 1px solid $paragraph-color;
+              color: #494c56;
+            }
+            p {
+              color: #494c56;
+            }
+          }
+        }
+        .blog-post-body {
+          &-title {
+            h2 {
+              color: $secondary-dark;
+            }
+          }
+          p {
+            color: #494c56;
+          }
+          .btn-primary {
+            border-color: $primary-light;
+            &:hover {
+              border-color: $secondary-light;
+            }
+          }
+        }
+      }
+    }
+    // Start blog-post style
+    &-post {
+      border-bottom: 1px solid #e9e9ea;
+
+      &-title {
+        a {
+          color: $secondary-light;
+        }
+      }
+
+      &-author {
+        &-thumb {
+          p {
+            color: #494c56;
+          }
+        }
+        .blog-post-meta {
+          ul {
+            p {
+              color: #494c56;
+            }
+          }
+        }
+      }
+      &:hover {
+        .blog-post-thumb {
+          img {
+            transform: scale(1.05) rotate(1.5deg);
+          }
+        }
+        a {
+          color: $paragraph-color;
+        }
+      }
+    }
+
+    //######## Start blog-details style############
+    &-details {
+      &-item {
+        h3 {
+          color: $secondary-light;
+        }
+        p {
+          color: #494c56;
+        }
+        .banner {
+          .anchor-text {
+            color: $primary-light;
+          }
+        }
+        .sociel-icon {
+          ul {
+            li {
+              a {
+                svg {
+                  path {
+                    fill: #494c56;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    //######## Start blog-related style############
+    &-related {
+      background-color: #f4f4f4;
+      h2 {
+        color: $secondary-light;
+      }
+    }
+  }
+  /********** 
+ Contact Form Section
+**********/
+  .contact-form {
+    background: #f4f4f4;
+
+    &-Information {
+      h2 {
+        color: $secondary-dark;
+      }
+      .address {
+        h3 {
+          color: #494c56;
+        }
+        p,
+        a {
+          color: #494c56;
+        }
+      }
+    }
+    form {
+      background: $white;
+
+      textarea {
+        background: #f4f4f4;
+        color: $secondary-light;
+        border: 1px solid $secondary-light;
+      }
+      ::placeholder {
+        color: #494c56;
+      }
+
+      h3 {
+        color: #494c56;
+      }
+      .Information {
+        &::before {
+          background: #f4f4f4;
+        }
+        h2 {
+          color: $secondary-dark;
+        }
+        &-input {
+          .input-box {
+            .input {
+              border: 1px solid $paragraph-color;
+              background: #f4f4f4;
+              color: $secondary-dark;
+              /* Change border when input focus*/
+              &:focus {
+                border-color: #1a1e2a;
+              }
+            }
+            .label {
+              color: #494c56;
+              background-color: #f4f4f4;
+            }
+          }
+          .input:focus ~ .label,
+          .input:not(:placeholder-shown).input:not(:focus) ~ .label {
+            background-color: $white;
+          }
+        }
+      }
+      .form-check-input {
+        background-color: #f4f4f4;
+      }
+      .form-check-label {
+        background: #f4f4f4;
+        border: 1px solid $paragraph-color;
+        color: $secondary-light;
+      }
+      .form-check-input:focus {
+        border-color: #f4f4f4;
+        box-shadow: none;
+      }
+      .form-check-input[type="radio"] {
+        border: 2px solid #494c56;
+      }
+      .form-check-input:checked[type="radio"] {
+        background-image: url(../images/contact/Ellipse2.svg);
+        border: 2px solid $secondary-light;
+      }
+      .form-check-input:checked[type="radio"] + .form-check-label {
+        color: $secondary-light;
+        border: 1px solid $secondary-light;
+      }
+    }
+  }
+
+  /********** 
+footer
+**********/
+  .footer {
+    background-color: $white;
+    &-shape-wrapper {
+      .shape-one,
+      .shape-two {
+        svg {
+          line {
+            stroke: #e9e9ea;
+          }
+        }
+      }
+    }
+    .anchor-text {
+      color: $primary-light;
+    }
+    &-widget {
+      h6 {
+        color: #74767c;
+      }
+
+      ul {
+        li {
+          a {
+            color: $secondary-light;
+            span {
+              svg {
+                path {
+                  fill: $primary-light;
+                }
+              }
+            }
+            &:hover {
+              color: $primary-light;
+            }
+          }
+        }
+      }
+    }
+    &-contact-info {
+      p {
+        color: #494c56;
+      }
+      a,
+      p {
+        color: #494c56;
+
+        span {
+          color: #74767c;
+        }
+      }
+    }
+    .social-icon {
+      ul {
+        li {
+          a {
+            svg {
+              transition: all 0.3s ease-in-out;
+              path {
+                transition: all 0.3s ease-in-out;
+                fill: #494c56;
+              }
+            }
+            &:hover {
+              svg {
+                path {
+                  fill: $primary-light;
+                }
+              }
+            }
+          }
+        }
+      }
+      p {
+        @include media-breakpoint-down(lg) {
+          margin-bottom: $spacer * 0;
+        }
+      }
+    }
+    &-logo {
+      a {
+        svg {
+          path {
+            fill: black;
+            &:nth-child(3) {
+              fill: white;
+            }
+          }
+        }
+      }
+      p {
+        color: #494c56;
+      }
+    }
+  }
+}
